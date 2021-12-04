@@ -13,9 +13,17 @@ import ListItemText from '@mui/material/ListItemText';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+    Link,
+    useRouteMatch,
+    Outlet
+} from "react-router-dom";
 
-const drawerWidth = 200;
+
+const drawerWidth = 250;
 
 export default function ResponsiveDrawer() {
     // const { window } = props;
@@ -30,26 +38,40 @@ export default function ResponsiveDrawer() {
             {/* <Toolbar /> */}
             {/* <Divider /> */}
             <List>
-                {['Home', 'Portfolio', 'Projects', 'Blog', 'Contect me'].map((text, index) => (
-                    <ListItem button key={text}>
+                <Link to='/' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
+                    <ListItem button>
                         <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                            <InboxIcon />
                         </ListItemIcon>
-                        <ListItemText primary={text} />
+                        <ListItemText primary="Hero" />
                     </ListItem>
-                ))}
+                </Link>
+                <Link to='/portfolio' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <InboxIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Portfolio" />
+                    </ListItem>
+                </Link>
+                <Link to='/projects' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <InboxIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Projects" />
+                    </ListItem>
+                </Link>
+                <Link to='/contact' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <InboxIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Contact me" />
+                    </ListItem>
+                </Link>
             </List>
             <Divider />
-            <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
         </div>
     );
 
@@ -114,7 +136,7 @@ export default function ResponsiveDrawer() {
                 sx={{ flexGrow: 1, p: 3, width: { lg: `calc(100% - ${drawerWidth}px)` } }}
             >
                 <Toolbar sx={{ display: { lg: 'none' } }} />
-                
+                <Outlet />
             </Box>
         </Box>
     );
