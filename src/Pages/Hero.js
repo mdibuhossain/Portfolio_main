@@ -4,7 +4,7 @@ import Typical from 'react-typical';
 import { Box } from '@mui/system';
 import { createStyles, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import bg from '../images/bg2.jpg';
+import bg from '../images/bg1.jpg';
 
 const useStyle = makeStyles((theme) => createStyles({
     imgContainer: {
@@ -38,10 +38,10 @@ const Hero = () => {
                     <img style={{ width: '220px', height: '220px', borderRadius: '50%' }} src="https://mdibuhossain.web.app/img/hero3.jpg" alt="" />
                 </Box>
                 <Typography variant="h3" sx={{ fontWeight: 600, color: 'white' }}>Ibrahim <span style={{ color: '#68BA5E' }}>Hossain</span></Typography>
-                <Typography variant="h5" sx={{ fontWeight: 500 }}>
+                <Typography variant="h5" sx={{ fontWeight: 500, color: 'white' }}>
                     I'm a {' '}
                     <Typical
-                        steps={['Web developer', 1000, 'React developer', 1000]}
+                        steps={['Web developer', 1000, 'React developer ⚛️', 1000]}
                         loop={Infinity}
                         wrapper="span"
                     />

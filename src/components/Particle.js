@@ -30,7 +30,7 @@ const Particle = () => {
                             mode: "push",
                         },
                         onHover: {
-                            enable: false,
+                            enable: true,
                             mode: "repulse",
                         },
                         resize: true,
@@ -53,10 +53,10 @@ const Particle = () => {
                 },
                 particles: {
                     color: {
-                        value: "#aaa",
+                        value: "rgb(51, 51, 51)",
                     },
                     links: {
-                        color: "#aaa",
+                        color: "rgb(51, 51, 51)",
                         distance: 150,
                         enable: true,
                         opacity: 0.5,
@@ -76,7 +76,7 @@ const Particle = () => {
                     number: {
                         density: {
                             enable: true,
-                            value_area: 800,
+                            value_area: 500,
                         },
                         value: 80,
                     },

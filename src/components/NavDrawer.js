@@ -42,7 +42,7 @@ export default function NavDrawer() {
 
     const { menuIcon } = useStyle();
     const drawer = (
-        <div>
+        <div >
             {/* <Toolbar /> */}
             {/* <Divider /> */}
             <List>
@@ -128,27 +128,39 @@ export default function NavDrawer() {
                     ModalProps={{
                         keepMounted: true, // Better open performance on mobile.
                     }}
+                    PaperProps={{
+                        sx: {
+                            // position: 'relative',
+                            backgroundColor: 'rgb(12, 12, 12)',
+                            opacity: '0.9',
+                            color: 'white'
+                        }
+                    }}
                     sx={{
                         display: { xs: 'block', lg: 'none' },
                         '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
                     }}
                 >
+                    <div style={{ position: 'absolute', top: '0', left: '0', right: '0', bottom: '0', backgroundColor: 'rgba(10, 10, 10,0.2)', filter: 'blur(3px)', zIndex: '-1' }}></div>
                     {drawer}
                 </Drawer>
                 <Drawer
                     variant="permanent"
                     PaperProps={{
                         sx: {
-                            backgroundColor: 'rgb(22, 22, 22)',
+                            // position: 'relative',
+                            backgroundColor: 'rgb(12, 12, 12)',
+                            opacity: '0.9',
                             color: 'white'
                         }
                     }}
                     sx={{
-                        display: { xs: 'none', lg: 'block' },
+                        position: 'relative', display: { xs: 'none', lg: 'block' },
                         '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
                     }}
                     open
                 >
+                    <div style={{ position: 'absolute', top: '0', left: '0', right: '0', bottom: '0', backgroundColor: 'rgba(10, 10, 10,0.2)', filter: 'blur(3px)', zIndex: '-1' }}></div>
                     {drawer}
                 </Drawer>
             </Box>
