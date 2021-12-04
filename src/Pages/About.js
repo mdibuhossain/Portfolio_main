@@ -3,11 +3,9 @@ import React from 'react';
 
 const About = () => {
     return (
-        <div className="container">
-            <Box sx={{ pt: { lg: 5, xs: 7 }, pl: { lg: 7, xs: 4 } }}>
-                hello
-            </Box>
-        </div>
+        <Box className="container" sx={{ pt: { lg: 5, xs: 7 }, pl: { lg: 7, xs: 4 } }}>
+            hello
+        </Box>
     );
 };
 
