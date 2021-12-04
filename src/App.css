@@ -1,8 +1,14 @@
 *{
   margin: 0;
   padding: 0;
+  color: white
 }
 
 html, body{
   margin: 0;
+}
+
+.container{
+  height: 100%;
+   background-color: rgb(12, 12, 12)
 }

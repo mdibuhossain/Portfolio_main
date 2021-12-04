@@ -8,10 +8,10 @@ import bg from '../images/bg1.jpg';
 
 const useStyle = makeStyles((theme) => createStyles({
     imgContainer: {
-        width: '235px',
-        height: '235px',
+        width: '225px',
+        height: '225px',
         borderRadius: '50%',
-        backgroundColor: 'rgb(113, 115, 117,0.2)',
+        background: `url(https://mdibuhossain.web.app/img/hero3.jpg) center center / cover`,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -35,7 +35,7 @@ const Hero = () => {
             <Particle />
             <Box sx={{ textAlign: 'center', position: 'relative', zIndex: '100' }}>
                 <Box className={imgContainer}>
-                    <img style={{ width: '220px', height: '220px', borderRadius: '50%' }} src="https://mdibuhossain.web.app/img/hero3.jpg" alt="" />
+                    {/* <img style={{ width: '220px', height: '220px', borderRadius: '50%' }} src="https://mdibuhossain.web.app/img/hero3.jpg" alt="" /> */}
                 </Box>
                 <Typography variant="h3" sx={{ fontWeight: 600, color: 'white' }}>Ibrahim <span style={{ color: '#68BA5E' }}>Hossain</span></Typography>
                 <Typography variant="h5" sx={{ fontWeight: 500, color: 'white' }}>
