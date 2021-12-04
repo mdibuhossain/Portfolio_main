@@ -21,11 +21,18 @@ import {
     useRouteMatch,
     Outlet
 } from "react-router-dom";
+import { createStyles, makeStyles } from '@mui/styles';
 
 
 const drawerWidth = 250;
 
-export default function ResponsiveDrawer() {
+const useStyle = makeStyles((theme) => createStyles({
+    menuIcon: {
+        color: 'white'
+    }
+}));
+
+export default function NavDrawer() {
     // const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -33,6 +40,7 @@ export default function ResponsiveDrawer() {
         setMobileOpen(!mobileOpen);
     };
 
+    const { menuIcon } = useStyle();
     const drawer = (
         <div>
             {/* <Toolbar /> */}
@@ -41,15 +49,23 @@ export default function ResponsiveDrawer() {
                 <Link to='/' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button>
                         <ListItemIcon>
-                            <InboxIcon />
+                            <InboxIcon className={menuIcon} />
                         </ListItemIcon>
                         <ListItemText primary="Hero" />
+                    </ListItem>
+                </Link>
+                <Link to='/about' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <InboxIcon className={menuIcon} />
+                        </ListItemIcon>
+                        <ListItemText primary="About me" />
                     </ListItem>
                 </Link>
                 <Link to='/portfolio' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button>
                         <ListItemIcon>
-                            <InboxIcon />
+                            <InboxIcon className={menuIcon} />
                         </ListItemIcon>
                         <ListItemText primary="Portfolio" />
                     </ListItem>
@@ -57,7 +73,7 @@ export default function ResponsiveDrawer() {
                 <Link to='/projects' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button>
                         <ListItemIcon>
-                            <InboxIcon />
+                            <InboxIcon className={menuIcon} />
                         </ListItemIcon>
                         <ListItemText primary="Projects" />
                     </ListItem>
@@ -65,7 +81,7 @@ export default function ResponsiveDrawer() {
                 <Link to='/contact' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button>
                         <ListItemIcon>
-                            <InboxIcon />
+                            <InboxIcon className={menuIcon} />
                         </ListItemIcon>
                         <ListItemText primary="Contact me" />
                     </ListItem>
@@ -101,8 +117,7 @@ export default function ResponsiveDrawer() {
             </AppBar>
             <Box
                 component="nav"
-                sx={{ width: { lg: drawerWidth }, flexShrink: { lg: 0 } }}
-                aria-label="mailbox folders"
+                sx={{ backgroundColor: 'rgb(17, 17, 17)', width: { lg: drawerWidth }, flexShrink: { lg: 0 } }}
             >
                 {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
                 <Drawer
@@ -122,6 +137,12 @@ export default function ResponsiveDrawer() {
                 </Drawer>
                 <Drawer
                     variant="permanent"
+                    PaperProps={{
+                        sx: {
+                            backgroundColor: 'rgb(22, 22, 22)',
+                            color: 'white'
+                        }
+                    }}
                     sx={{
                         display: { xs: 'none', lg: 'block' },
                         '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
@@ -133,11 +154,11 @@ export default function ResponsiveDrawer() {
             </Box>
             <Box
                 component="main"
-                sx={{ flexGrow: 1, p: 3, width: { lg: `calc(100% - ${drawerWidth}px)` } }}
+                sx={{ flexGrow: 1, height: '100vh', width: { lg: `calc(100% - ${drawerWidth}px)` } }}
             >
-                <Toolbar sx={{ display: { lg: 'none' } }} />
+                {/* <Toolbar sx={{ display: { lg: 'none' } }} /> */}
                 <Outlet />
             </Box>
-        </Box>
+        </Box >
     );
 }

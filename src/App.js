@@ -1,5 +1,5 @@
 import './App.css';
-import ResponsiveDrawer from './components/ResponsiveDrawer';
+import NavDrawer from './components/NavDrawer';
 import {
   BrowserRouter,
   Routes,
@@ -11,14 +11,16 @@ import Hero from './Pages/Hero';
 import Portfolio from './Pages/Portfolio';
 import Projects from './Pages/Projects';
 import Contact from './Pages/Contact';
+import About from './Pages/About';
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<ResponsiveDrawer />}>
+          <Route path='/' element={<NavDrawer />}>
             <Route path='/' element={<Hero />} />
+            <Route path='/about' element={<About />} />
             <Route path='/portfolio' element={<Portfolio />} />
             <Route path='/projects' element={<Projects />} />
             <Route path='/contact' element={<Contact />} />
