@@ -22,6 +22,11 @@ import {
     Outlet
 } from "react-router-dom";
 import { createStyles, makeStyles } from '@mui/styles';
+import Hero from '../Pages/Hero';
+import About from '../Pages/About';
+import Portfolio from '../Pages/Portfolio';
+import Projects from '../Pages/Projects';
+import Contact from '../Pages/Contact';
 
 
 const drawerWidth = 250;
@@ -117,7 +122,7 @@ export default function NavDrawer() {
             </AppBar>
             <Box
                 component="nav"
-                sx={{ backgroundColor: 'rgb(17, 17, 17)', width: { lg: drawerWidth }, flexShrink: { lg: 0 } }}
+                sx={{ width: { lg: drawerWidth }, flexShrink: { lg: 0 } }}
             >
                 {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
                 <Drawer
@@ -131,7 +136,8 @@ export default function NavDrawer() {
                     PaperProps={{
                         sx: {
                             // position: 'relative',
-                            backgroundColor: 'rgb(12, 12, 12)',
+                            backgroundColor: 'rgb(17, 17, 17)',
+                            // backgroundColor: 'rgb(12, 12, 12)',
                             opacity: '0.9',
                             color: 'white'
                         }
@@ -149,8 +155,9 @@ export default function NavDrawer() {
                     PaperProps={{
                         sx: {
                             // position: 'relative',
-                            backgroundColor: 'rgb(12, 12, 12)',
-                            opacity: '0.9',
+                            backgroundColor: 'rgb(17, 17, 17)',
+                            // backgroundColor: 'rgb(12, 12, 12)',
+                            opacity: '0.99',
                             color: 'white'
                         }
                     }}
@@ -169,7 +176,12 @@ export default function NavDrawer() {
                 sx={{ flexGrow: 1, height: '100vh', width: { lg: `calc(100% - ${drawerWidth}px)` } }}
             >
                 {/* <Toolbar sx={{ display: { lg: 'none' } }} /> */}
-                <Outlet />
+                {/* <Outlet /> */}
+                <Hero />
+                <About />
+                <Portfolio />
+                <Projects />
+                <Contact />
             </Box>
         </Box >
     );

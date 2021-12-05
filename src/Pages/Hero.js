@@ -33,7 +33,7 @@ const Hero = () => {
     return (
         <Box className={heroContainer}>
             <Particle />
-            <Box sx={{ textAlign: 'center', position: 'relative', zIndex: '100' }}>
+            <Box sx={{ textAlign: 'center', position: 'relative', zIndex: '1000' }}>
                 <Box className={imgContainer}>
                     {/* <img style={{ width: '220px', height: '220px', borderRadius: '50%' }} src="https://mdibuhossain.web.app/img/hero3.jpg" alt="" /> */}
                 </Box>

@@ -26,11 +26,11 @@ const Particle = () => {
                 interactivity: {
                     events: {
                         onClick: {
-                            enable: false,
+                            enable: true,
                             mode: "push",
                         },
                         onHover: {
-                            enable: true,
+                            enable: false,
                             mode: "repulse",
                         },
                         resize: true,
