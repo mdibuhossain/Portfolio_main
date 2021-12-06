@@ -17,7 +17,6 @@ import {
     BrowserRouter,
     Routes,
     Route,
-    Link,
     useRouteMatch,
     Outlet
 } from "react-router-dom";
@@ -27,6 +26,7 @@ import About from '../Pages/About';
 import Portfolio from '../Pages/Portfolio';
 import Projects from '../Pages/Projects';
 import Contact from '../Pages/Contact';
+import { HashLink as Link} from 'react-router-hash-link';
 
 
 const drawerWidth = 250;
@@ -51,7 +51,7 @@ export default function NavDrawer() {
             {/* <Toolbar /> */}
             {/* <Divider /> */}
             <List>
-                <Link to='/' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
+                <Link smooth to='#top' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button>
                         <ListItemIcon>
                             <InboxIcon className={menuIcon} />
@@ -59,7 +59,7 @@ export default function NavDrawer() {
                         <ListItemText primary="Hero" />
                     </ListItem>
                 </Link>
-                <Link to='/about' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
+                <Link smooth to='#about' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button>
                         <ListItemIcon>
                             <InboxIcon className={menuIcon} />
@@ -67,7 +67,7 @@ export default function NavDrawer() {
                         <ListItemText primary="About me" />
                     </ListItem>
                 </Link>
-                <Link to='/portfolio' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
+                <Link smooth to='#portfolio' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button>
                         <ListItemIcon>
                             <InboxIcon className={menuIcon} />
@@ -75,7 +75,7 @@ export default function NavDrawer() {
                         <ListItemText primary="Portfolio" />
                     </ListItem>
                 </Link>
-                <Link to='/projects' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
+                <Link smooth to='#projects' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button>
                         <ListItemIcon>
                             <InboxIcon className={menuIcon} />
@@ -83,7 +83,7 @@ export default function NavDrawer() {
                         <ListItemText primary="Projects" />
                     </ListItem>
                 </Link>
-                <Link to='/contact' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
+                <Link smooth to='#contact' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button>
                         <ListItemIcon>
                             <InboxIcon className={menuIcon} />

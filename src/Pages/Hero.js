@@ -4,7 +4,8 @@ import Typical from 'react-typical';
 import { Box } from '@mui/system';
 import { createStyles, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import bg from '../images/bg1.jpg';
+import bg from '../images/bg3.png';
+import { Parallax } from 'react-parallax';
 
 const useStyle = makeStyles((theme) => createStyles({
     imgContainer: {
@@ -24,14 +25,15 @@ const useStyle = makeStyles((theme) => createStyles({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        position: 'relative'
+        position: 'relative',
+        overflow: 'hidden'
     }
 }));
 
 const Hero = () => {
     const { imgContainer, heroContainer } = useStyle();
     return (
-        <Box className={heroContainer}>
+        <Box id="top" className={heroContainer}>
             <Particle />
             <Box sx={{ textAlign: 'center', position: 'relative', zIndex: '1000' }}>
                 <Box className={imgContainer}>
