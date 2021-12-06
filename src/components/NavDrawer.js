@@ -26,7 +26,7 @@ import About from '../Pages/About';
 import Portfolio from '../Pages/Portfolio';
 import Projects from '../Pages/Projects';
 import Contact from '../Pages/Contact';
-import { HashLink as Link} from 'react-router-hash-link';
+import { HashLink as Link } from 'react-router-hash-link';
 
 
 const drawerWidth = 250;
@@ -155,7 +155,7 @@ export default function NavDrawer() {
                     PaperProps={{
                         sx: {
                             // position: 'relative',
-                            backgroundColor: 'rgb(17, 17, 17)',
+                            backgroundColor: 'black',
                             // backgroundColor: 'rgb(12, 12, 12)',
                             opacity: '0.99',
                             color: 'white'
