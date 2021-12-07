@@ -4,8 +4,8 @@ import React from 'react';
 
 const useStyle = makeStyles((theme) => createStyles({
     textField: {
+        margin: '50px auto',
         textAlign: 'center',
-        marginTop: '50px',
         marginBottom: '45px'
     }
 }));
