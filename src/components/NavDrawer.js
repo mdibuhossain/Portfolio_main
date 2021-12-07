@@ -176,12 +176,12 @@ export default function NavDrawer() {
                 sx={{ flexGrow: 1, height: '100vh', width: { lg: `calc(100% - ${drawerWidth}px)` } }}
             >
                 {/* <Toolbar sx={{ display: { lg: 'none' } }} /> */}
-                {/* <Outlet /> */}
                 <Hero />
                 <About />
                 <Portfolio />
                 <Blogs />
                 <Contact />
+                {/* <Outlet /> */}
             </Box>
         </Box >
     );

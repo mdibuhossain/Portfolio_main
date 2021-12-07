@@ -9,6 +9,7 @@ const Blogs = () => {
                 title="LATEST BLOGS"
                 subtitle="BLOGS"
             />
+            Comming soon
         </Box>
     );
 };
