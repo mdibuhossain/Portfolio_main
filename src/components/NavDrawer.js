@@ -75,7 +75,7 @@ export default function NavDrawer() {
                         <ListItemText primary="Portfolio" />
                     </ListItem>
                 </Link>
-                <Link smooth to='#blogs' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
+                <Link smooth to='/blogs' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button>
                         <ListItemIcon>
                             <InboxIcon className={menuIcon} />
@@ -136,8 +136,8 @@ export default function NavDrawer() {
                     PaperProps={{
                         sx: {
                             // position: 'relative',
-                            backgroundColor: 'rgb(17, 17, 17)',
-                            // backgroundColor: 'rgb(12, 12, 12)',
+                            // backgroundColor: 'rgb(17, 17, 17)',
+                            backgroundColor: 'rgb(44, 50, 53)',
                             opacity: '0.9',
                             color: 'white'
                         }
@@ -155,8 +155,8 @@ export default function NavDrawer() {
                     PaperProps={{
                         sx: {
                             // position: 'relative',
-                            backgroundColor: 'black',
-                            // backgroundColor: 'rgb(12, 12, 12)',
+                            // backgroundColor: 'black',
+                            backgroundColor: 'rgb(44, 50, 53)',
                             opacity: '0.99',
                             color: 'white'
                         }
@@ -179,7 +179,7 @@ export default function NavDrawer() {
                 <Hero />
                 <About />
                 <Portfolio />
-                <Blogs />
+                {/* <Blogs /> */}
                 <Contact />
                 {/* <Outlet /> */}
             </Box>

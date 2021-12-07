@@ -96,7 +96,7 @@ const About = () => {
                         </Typography>
                     </a>
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} md={6} sx={{ mb: 8 }}>
                     <Box>
                         <Typography variant="h5" sx={{ mb: 3 }}>
                             WHAT I DO
