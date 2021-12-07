@@ -29,7 +29,7 @@ const Particle = () => {
                     // repeat: 'no-repeat',
                     // size: 'cover'
                 },
-                fpsLimit: 60,
+                fpsLimit: 30,
                 interactivity: {
                     events: {
                         onClick: {
@@ -47,7 +47,7 @@ const Particle = () => {
                             distance: 400,
                             duration: 2,
                             opacity: 0.8,
-                            size: 40,
+                            size: 5,
                         },
                         push: {
                             quantity: 4,
@@ -66,7 +66,7 @@ const Particle = () => {
                         color: "#858d91",
                         distance: 150,
                         enable: true,
-                        opacity: 0.5,
+                        opacity: 0.7,
                         width: 1,
                     },
                     collisions: {
@@ -85,7 +85,7 @@ const Particle = () => {
                             enable: true,
                             value_area: 800,
                         },
-                        value: 50,
+                        value: 40,
                     },
                     opacity: {
                         value: 0.2,
@@ -95,7 +95,7 @@ const Particle = () => {
                     },
                     size: {
                         random: true,
-                        value: 5,
+                        value: 4,
                     },
                 },
                 detectRetina: true,
