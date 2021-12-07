@@ -39,7 +39,7 @@ const Particle = () => {
                     enable: false
                 },
                 detectRetina: true,
-                fpsLimit: 30,
+                fpsLimit: 60,
                 infection: {
                     cure: false,
                     delay: 0,

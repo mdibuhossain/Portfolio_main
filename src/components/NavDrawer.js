@@ -10,7 +10,6 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import {
@@ -26,7 +25,8 @@ import About from '../Pages/About';
 import Portfolio from '../Pages/Portfolio';
 import Projects from '../Pages/Projects';
 import Contact from '../Pages/Contact';
-import { HashLink as Link } from 'react-router-hash-link';
+import { NavHashLink as Link } from 'react-router-hash-link';
+import Blogs from '../Pages/Blogs';
 
 
 const drawerWidth = 250;
@@ -75,12 +75,12 @@ export default function NavDrawer() {
                         <ListItemText primary="Portfolio" />
                     </ListItem>
                 </Link>
-                <Link smooth to='#projects' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
+                <Link smooth to='#blogs' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button>
                         <ListItemIcon>
                             <InboxIcon className={menuIcon} />
                         </ListItemIcon>
-                        <ListItemText primary="Projects" />
+                        <ListItemText primary="Blogs" />
                     </ListItem>
                 </Link>
                 <Link smooth to='#contact' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
@@ -114,7 +114,7 @@ export default function NavDrawer() {
                         aria-label="open drawer"
                         // edge="start"
                         onClick={handleDrawerToggle}
-                        sx={{ mr: 2, display: { lg: 'none' } }}
+                        sx={{ ml: 'auto', display: { lg: 'none' } }}
                     >
                         <MenuIcon />
                     </IconButton>
@@ -180,7 +180,7 @@ export default function NavDrawer() {
                 <Hero />
                 <About />
                 <Portfolio />
-                <Projects />
+                <Blogs />
                 <Contact />
             </Box>
         </Box >

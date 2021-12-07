@@ -2,9 +2,9 @@ import React from 'react';
 import Particle from '../components/Particle';
 import Typical from 'react-typical';
 import { Box } from '@mui/system';
-import { createStyles, Typography } from '@mui/material';
+import { Collapse, createStyles, Typography, Zoom } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import bg from '../images/bg3.png';
+import bg from '../images/bg2.png';
 import { Parallax } from 'react-parallax';
 
 const useStyle = makeStyles((theme) => createStyles({
@@ -19,7 +19,7 @@ const useStyle = makeStyles((theme) => createStyles({
         margin: '0 auto 30px'
     },
     heroContainer: {
-        background: `url(${bg}) center center / cover`,
+        background: `url(${bg}) center center / cover fixed`,
         height: '100%',
         width: '100%',
         display: 'flex',
@@ -36,10 +36,14 @@ const Hero = () => {
         <Box id="top" className={heroContainer}>
             <Particle />
             <Box sx={{ textAlign: 'center', position: 'relative', zIndex: '1000' }}>
-                <Box className={imgContainer}>
-                    {/* <img style={{ width: '220px', height: '220px', borderRadius: '50%' }} src="https://mdibuhossain.web.app/img/hero3.jpg" alt="" /> */}
-                </Box>
-                <Typography variant="h3" sx={{ fontWeight: 600, color: 'white' }}>Ibrahim <span style={{ color: '#68BA5E' }}>Hossain</span></Typography>
+                <Zoom in='true'>
+                    <Box className={imgContainer}>
+                        {/* <img style={{ width: '220px', height: '220px', borderRadius: '50%' }} src="https://mdibuhossain.web.app/img/hero3.jpg" alt="" /> */}
+                    </Box>
+                </Zoom>
+                <Typography variant="h3" sx={{ fontWeight: 600, color: 'white' }}>
+                    Ibrahim <span style={{ color: '#68BA5E' }}>Hossain</span>
+                </Typography>
                 <Typography variant="h5" sx={{ fontWeight: 500, color: 'white' }}>
                     I'm a {' '}
                     <Typical

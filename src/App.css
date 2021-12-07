@@ -21,8 +21,37 @@ html, body{
 }
 
 .container{
+  /* height: 100%; */
+  /* position: relative; */
+  /* z-index: 1000; */
+  background-color: rgba(0, 0, 0, 1);
+  overflow: hidden
+}
+
+.hero-btn::before{
+  content: "";
+  position: absolute;
+  width: 0%;
+  right: 0;
+  top: 0px;
   height: 100%;
+  background-color: #1A90FF;
+  z-index: -10;
+  transition: .25s ease-in-out;
+}
+.hero-btn{
+  text-decoration: none;
+  display: inline-block;
   position: relative;
-  z-index: 1000;
-   background-color: rgb(36, 24, 24)
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: 20px 0;
+  padding: 16px 25px;
+  border-radius: 100px;
+  border: 1px solid #1A90FF;
+  overflow: hidden;
+  z-index: 100;
+}
+.hero-btn:hover::before{
+  width: 100%;
 }
