@@ -13,20 +13,14 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import {
-    BrowserRouter,
-    Routes,
-    Route,
-    useRouteMatch,
     Outlet
 } from "react-router-dom";
 import { createStyles, makeStyles } from '@mui/styles';
 import Hero from '../Pages/Hero';
 import About from '../Pages/About';
 import Portfolio from '../Pages/Portfolio';
-import Projects from '../Pages/Projects';
 import Contact from '../Pages/Contact';
 import { NavHashLink as Link } from 'react-router-hash-link';
-import Blogs from '../Pages/Blogs';
 
 
 const drawerWidth = 250;
@@ -38,7 +32,6 @@ const useStyle = makeStyles((theme) => createStyles({
 }));
 
 export default function NavDrawer() {
-    // const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
     const handleDrawerToggle = () => {
@@ -96,8 +89,6 @@ export default function NavDrawer() {
         </div>
     );
 
-    // const container = window !== undefined ? () => window().document.body : undefined;
-
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
@@ -126,7 +117,6 @@ export default function NavDrawer() {
             >
                 {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
                 <Drawer
-                    // container={container}
                     variant="temporary"
                     open={mobileOpen}
                     onClose={handleDrawerToggle}
@@ -135,11 +125,11 @@ export default function NavDrawer() {
                     }}
                     PaperProps={{
                         sx: {
-                            // position: 'relative',
+                            position: 'relative',
                             // backgroundColor: 'rgb(17, 17, 17)',
                             backgroundColor: 'rgb(44, 50, 53)',
                             opacity: '0.9',
-                            color: 'white'
+                            // color: 'white'
                         }
                     }}
                     sx={{
@@ -176,12 +166,11 @@ export default function NavDrawer() {
                 sx={{ flexGrow: 1, height: '100vh', width: { lg: `calc(100% - ${drawerWidth}px)` } }}
             >
                 {/* <Toolbar sx={{ display: { lg: 'none' } }} /> */}
+                {/* <Outlet /> */}
                 <Hero />
                 <About />
                 <Portfolio />
-                {/* <Blogs /> */}
                 <Contact />
-                {/* <Outlet /> */}
             </Box>
         </Box >
     );
