@@ -34,7 +34,9 @@ const Hero = () => {
     const { imgContainer, heroContainer } = useStyle();
     return (
         <Box id="top" className={heroContainer}>
-            <Particle />
+            <Parallax>
+                <Particle />
+            </Parallax>
             <Box sx={{ textAlign: 'center', position: 'relative', zIndex: '1000' }}>
                 <Zoom in='true'>
                     <Box className={imgContainer}>
@@ -47,7 +49,7 @@ const Hero = () => {
                 <Typography variant="h5" sx={{ fontWeight: 500, color: 'white' }}>
                     I'm a {' '}
                     <Typical
-                        steps={['Web developer', 1000, 'React developer ⚛️', 1000]}
+                        steps={['Web developer', 1000, 'React developer ⚛️', 500]}
                         loop={Infinity}
                         wrapper="span"
                     />

@@ -44,7 +44,10 @@ export default function NavDrawer() {
             {/* <Toolbar /> */}
             {/* <Divider /> */}
             <List>
-                <Link smooth to='#top' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
+                <Link smooth={true}
+                    to='#top'
+                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}
+                >
                     <ListItem button>
                         <ListItemIcon>
                             <InboxIcon className={menuIcon} />
@@ -52,7 +55,10 @@ export default function NavDrawer() {
                         <ListItemText primary="Hero" />
                     </ListItem>
                 </Link>
-                <Link smooth to='#about' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
+                <Link smooth={true}
+                    to='#about'
+                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}
+                >
                     <ListItem button>
                         <ListItemIcon>
                             <InboxIcon className={menuIcon} />
@@ -60,7 +66,7 @@ export default function NavDrawer() {
                         <ListItemText primary="About me" />
                     </ListItem>
                 </Link>
-                <Link smooth to='#portfolio' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
+                <Link smooth={true} to='#portfolio' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button>
                         <ListItemIcon>
                             <InboxIcon className={menuIcon} />
@@ -68,7 +74,7 @@ export default function NavDrawer() {
                         <ListItemText primary="Portfolio" />
                     </ListItem>
                 </Link>
-                <Link smooth to='/blogs' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
+                <Link smooth={true} to='/blogs' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button>
                         <ListItemIcon>
                             <InboxIcon className={menuIcon} />
@@ -76,7 +82,7 @@ export default function NavDrawer() {
                         <ListItemText primary="Blogs" />
                     </ListItem>
                 </Link>
-                <Link smooth to='#contact' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
+                <Link smooth={true} to='#contact' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button>
                         <ListItemIcon>
                             <InboxIcon className={menuIcon} />
@@ -128,7 +134,7 @@ export default function NavDrawer() {
                             position: 'relative',
                             // backgroundColor: 'rgb(17, 17, 17)',
                             backgroundColor: 'rgb(44, 50, 53)',
-                            opacity: '0.9',
+                            opacity: '1',
                             // color: 'white'
                         }
                     }}
@@ -147,7 +153,7 @@ export default function NavDrawer() {
                             // position: 'relative',
                             // backgroundColor: 'black',
                             backgroundColor: 'rgb(44, 50, 53)',
-                            opacity: '0.99',
+                            opacity: '1',
                             color: 'white'
                         }
                     }}
