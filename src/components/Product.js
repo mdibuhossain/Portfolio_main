@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material';
+import { Grid, Typography, Button, Chip } from '@mui/material';
 import { createStyles, makeStyles } from '@mui/styles';
 import { Box } from '@mui/system';
 import React from 'react';
@@ -6,7 +6,7 @@ import React from 'react';
 const previewHeight = '200px';
 
 const Product = (props) => {
-    const { name, images } = props.product;
+    const { name, images, categories } = props.product;
     const useStyle = makeStyles((theme) => createStyles({
         showProduct: {
             position: 'relative',
@@ -34,6 +34,9 @@ const Product = (props) => {
             backdropFilter: 'blur(5px)'
         }
     }));
+    const handleClick = () => {
+        console.info('You clicked the Chip.');
+    };
     const { showProduct, imgContainer, projectImg } = useStyle();
     return (
         <>
@@ -42,11 +45,17 @@ const Product = (props) => {
                     <Box className={showProduct}>
                         <img className={projectImg} src={images[0]} alt="" />
                     </Box>
-                    <Box sx={{ border: '1px solid white', padding: '15px' }}>
-                        <Typography variant='subtitle' sx={{ fontWeight: 600 }}>
+                    <Box sx={{ padding: '15px' }}>
+                        <Typography variant='h6' sx={{ fontWeight: 600 }}>
                             {name}
                         </Typography>
-                        
+                        {
+                            categories.map(tag => {
+                                return (
+                                    <Chip sx={{ mr: 1, mb: 1 }} label={tag} variant="outlined" onClick={handleClick} />
+                                )
+                            })
+                        }
                     </Box>
                 </Box>
             </Grid>

@@ -4,7 +4,11 @@
         "live": "https://graphix-shop.web.app/",
         "client_site": "https://github.com/mdibuhossain/graphiXshop-client-site",
         "server_site": "https://github.com/mdibuhossain/graphiXshop-server-site",
-        "categories": "nodejs, reactjs, javascript",
+        "categories": [
+            "NodeJS",
+            "ReactJS",
+            "JavaScript"
+        ],
         "images": [
             "./images/project/graphixshop/1.png",
             "./images/project/graphixshop/2.png",
@@ -16,7 +20,11 @@
         "live": "https://world-trip.web.app/",
         "client_site": "https://github.com/mdibuhossain/WorldTrip-Client-site",
         "server_site": "https://github.com/mdibuhossain/WorldTrip-Server-site",
-        "categories": "nodejs, reactjs, javascript",
+        "categories": [
+            "NodeJS",
+            "ReactJS",
+            "JavaScript"
+        ],
         "images": [
             "./images/project/worldtrip/1.png",
             "./images/project/worldtrip/2.png",
@@ -28,7 +36,10 @@
         "live": "https://life-dental-care.web.app/",
         "client_site": "https://github.com/mdibuhossain/Life-Dental-Care-Client-site",
         "server_site": "",
-        "categories": "reactjs, javascript",
+        "categories": [
+            "ReactJS",
+            "JavaScript"
+        ],
         "images": [
             "./images/project/lifeDentalCare/1.png",
             "./images/project/lifeDentalCare/2.png",
@@ -41,7 +52,12 @@
         "live": "https://devcourse.netlify.app/",
         "client_site": "https://github.com/mdibuhossain/DevCourse-react-route",
         "server_site": "",
-        "categories": "html, css, bootstrap, javascript",
+        "categories": [
+            "HTML",
+            "CSS",
+            "Bootstrap",
+            "JavaScript"
+        ],
         "images": [
             "./images/project/devCourse/1.png",
             "./images/project/devCourse/2.png",

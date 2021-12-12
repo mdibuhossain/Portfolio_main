@@ -14,7 +14,6 @@ const useStyle = makeStyles((theme) => createStyles({
         height: '200px',
         borderRadius: '50%',
         background: `url(${hero}) center center / cover`,
-        backgroundSize: '150px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
