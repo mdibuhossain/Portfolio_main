@@ -3,13 +3,15 @@ import { createStyles, makeStyles } from '@mui/styles';
 import { Box } from '@mui/system';
 import React from 'react';
 
+const previewHeight = '200px';
+
 const Product = (props) => {
     const { name, images } = props.product;
     const useStyle = makeStyles((theme) => createStyles({
         showProduct: {
             position: 'relative',
             width: '100%',
-            height: '350px',
+            height: `${previewHeight}`,
             borderRadius: '12px',
             // background: `url(${images[0]}) top / cover`,
             // objectFit: 'cover',
@@ -17,7 +19,7 @@ const Product = (props) => {
         },
         projectImg: {
             '&:hover': {
-                transform: 'translate(0%, calc(-100% + 350px))'
+                transform: `translate(0%, calc(-100% + ${previewHeight}))`
             },
             position: 'absolute',
             zIndex: '10',
@@ -39,6 +41,9 @@ const Product = (props) => {
                 <Box className={imgContainer}>
                     <Box className={showProduct}>
                         <img className={projectImg} src={images[0]} alt="" />
+                    </Box>
+                    <Box>
+                        Live Client Server
                     </Box>
                 </Box>
             </Grid>

@@ -32,11 +32,11 @@ const Portfolio = () => {
                 title="FEATURED WORKS"
                 subtitle="PORTFOLIO"
             />
-            <Box>
+            <Box sx={{my: 3}}>
                 <Tabs value={value} onChange={handleChange} centered>
-                    <Tab name="javascript" label="All" sx={{ color: 'white' }} />
-                    <Tab name="nodejs" label="NodeJS" sx={{ color: 'white' }} />
-                    <Tab name="reactjs" label="ReactJS" sx={{ color: 'white' }} />
+                    <Tab name="javascript" label="All" sx={{ color: 'white', fontWeight: '600' }} />
+                    <Tab name="nodejs" label="NodeJS" sx={{ color: 'white', fontWeight: '600' }} />
+                    <Tab name="reactjs" label="ReactJS" sx={{ color: 'white', fontWeight: '600' }} />
                 </Tabs>
             </Box>
             <Box>

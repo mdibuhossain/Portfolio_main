@@ -20,6 +20,7 @@ html, body{
   transition: 0.5s;
 }
 
+
 .container{
   min-height: 100%;
   position: relative;
@@ -54,4 +55,51 @@ html, body{
 }
 .hero-btn:hover::before{
   width: 100%;
+}
+
+.contactUniversalContainer{
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(5, 5, 5, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  margin: 0 auto;
+  width: 100%;
+  padding: 40px 0;
+  border-radius: 15px;
+}
+.contactContainer{
+  width: 100%;
+}
+.contactContainer textarea{
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  width: 100%;
+  padding: 12px;
+  outline: none;
+  color: white;
+  border-radius: 8px;
+  margin: 5px 0 15px;
+  resize: none;
+  background-color: #2e2626;
+  border: 1px solid #000000;
+}
+.contactContainer input{
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  width: 100%;
+  padding: 12px;
+  outline: none;
+  color: white;
+  margin: 5px 0 12px;
+  border-radius: 8px;
+  background-color: #2e2626;
+  border: 1px solid #000000;
+}
+.contactContainer input:focus, textarea:focus{
+  border: 1px solid rgb(213, 208, 243);
+  box-shadow: 0 0 6px rgba(213, 208, 243, 1);
 }
