@@ -10,10 +10,11 @@ import { Parallax } from 'react-parallax';
 
 const useStyle = makeStyles((theme) => createStyles({
     imgContainer: {
-        width: '225px',
-        height: '225px',
+        width: '200px',
+        height: '200px',
         borderRadius: '50%',
         background: `url(${hero}) center center / cover`,
+        backgroundSize: '150px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -44,13 +45,13 @@ const Hero = () => {
                         {/* <img style={{ width: '220px', height: '220px', borderRadius: '50%' }} src="https://mdibuhossain.web.app/img/hero3.jpg" alt="" /> */}
                     </Box>
                 </Zoom>
-                <Typography variant="h3" sx={{ fontWeight: 600, color: 'white' }}>
-                    Ibrahim <span style={{ color: '#68BA5E' }}>Hossain</span>
+                <Typography variant="h4" sx={{ fontWeight: 600, color: 'white' }}>
+                    Ibrahim <span style={{ color: 'rgb(132, 193, 255)' }}>Hossain</span>
                 </Typography>
-                <Typography variant="h5" sx={{ fontWeight: 500, color: 'white' }}>
+                <Typography variant="h6" sx={{ fontWeight: 500, color: 'white' }}>
                     I'm a {' '}
                     <Typical
-                        steps={['Web developer', 1000, 'React developer ⚛️', 500]}
+                        steps={['Web developer', 2000, 'React developer ⚛️', 1000]}
                         loop={Infinity}
                         wrapper="span"
                     />

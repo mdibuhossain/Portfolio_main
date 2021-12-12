@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import { createStyles, makeStyles } from '@mui/styles';
 import { Box } from '@mui/system';
 import React from 'react';
@@ -42,8 +42,11 @@ const Product = (props) => {
                     <Box className={showProduct}>
                         <img className={projectImg} src={images[0]} alt="" />
                     </Box>
-                    <Box>
-                        Live Client Server
+                    <Box sx={{ border: '1px solid white', padding: '15px' }}>
+                        <Typography variant='subtitle' sx={{ fontWeight: 600 }}>
+                            {name}
+                        </Typography>
+                        
                     </Box>
                 </Box>
             </Grid>

@@ -18,10 +18,9 @@
         "server_site": "https://github.com/mdibuhossain/WorldTrip-Server-site",
         "categories": "nodejs, reactjs, javascript",
         "images": [
-            "./images/project/lifeDentalCare/1.png",
-            "./images/project/lifeDentalCare/2.png",
-            "./images/project/lifeDentalCare/3.png",
-            "./images/project/lifeDentalCare/4.png"
+            "./images/project/worldtrip/1.png",
+            "./images/project/worldtrip/2.png",
+            "./images/project/worldtrip/3.png"
         ]
     },
     {
@@ -31,9 +30,10 @@
         "server_site": "",
         "categories": "reactjs, javascript",
         "images": [
-            "./images/project/worldtrip/1.png",
-            "./images/project/worldtrip/2.png",
-            "./images/project/worldtrip/3.png"
+            "./images/project/lifeDentalCare/1.png",
+            "./images/project/lifeDentalCare/2.png",
+            "./images/project/lifeDentalCare/3.png",
+            "./images/project/lifeDentalCare/4.png"
         ]
     },
     {

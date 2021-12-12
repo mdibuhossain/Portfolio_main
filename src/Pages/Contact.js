@@ -54,7 +54,7 @@ const Contact = () => {
                             </Typography>
                             <textarea
                                 name="message"
-                                rows="11"
+                                rows="12"
                             />
                         </Grid>
                     </Grid>
