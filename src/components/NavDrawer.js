@@ -45,7 +45,7 @@ export default function NavDrawer() {
             {/* <Divider /> */}
             <List>
                 <Link smooth={true}
-                    to='#top'
+                    to='top'
                     style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}
                 >
                     <ListItem button>
@@ -56,7 +56,7 @@ export default function NavDrawer() {
                     </ListItem>
                 </Link>
                 <Link smooth={true}
-                    to='#about'
+                    to='about'
                     style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}
                 >
                     <ListItem button>
@@ -66,7 +66,7 @@ export default function NavDrawer() {
                         <ListItemText primary="About me" />
                     </ListItem>
                 </Link>
-                <Link smooth={true} to='#portfolio' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
+                <Link smooth={true} to='portfolio' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button>
                         <ListItemIcon>
                             <InboxIcon className={menuIcon} />
@@ -74,7 +74,7 @@ export default function NavDrawer() {
                         <ListItemText primary="Portfolio" />
                     </ListItem>
                 </Link>
-                <Link smooth={true} to='/blogs' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
+                <Link smooth={true} to='blogs' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button>
                         <ListItemIcon>
                             <InboxIcon className={menuIcon} />
@@ -82,7 +82,7 @@ export default function NavDrawer() {
                         <ListItemText primary="Blogs" />
                     </ListItem>
                 </Link>
-                <Link smooth={true} to='#contact' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
+                <Link smooth={true} to='contact' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button>
                         <ListItemIcon>
                             <InboxIcon className={menuIcon} />
@@ -172,10 +172,10 @@ export default function NavDrawer() {
                 sx={{ flexGrow: 1, height: '100vh', width: { lg: `calc(100% - ${drawerWidth}px)` } }}
             >
                 {/* <Toolbar sx={{ display: { lg: 'none' } }} /> */}
-                <Hero />
+                {/* <Hero />
                 <About />
                 <Portfolio />
-                <Contact />
+                <Contact /> */}
                 <Outlet />
             </Box>
         </Box >

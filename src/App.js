@@ -21,12 +21,13 @@ function App() {
         <Routes>
           <Route exact path='/' element={<NavDrawer />}>
             <Route exact path='/' element={<Hero />} />
+            <Route exact path='/top' element={<Hero />} />
             <Route exact path='/about' element={<About />} />
             <Route exact path='/portfolio' element={<Portfolio />} />
             <Route exact path='/contact' element={<Contact />} />
             <Route exact path='/:id' element={<ProjectDetails />} />
+            <Route exact path='/blogs' element={<Blogs />} />
           </Route>
-          <Route exact path='/blogs' element={<Blogs />} />
         </Routes>
       </BrowserRouter>
     </>
