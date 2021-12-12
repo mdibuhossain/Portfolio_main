@@ -12,19 +12,21 @@ import Portfolio from './Pages/Portfolio';
 import Contact from './Pages/Contact';
 import About from './Pages/About';
 import Blogs from './Pages/Blogs';
+import ProjectDetails from './components/ProjectDetails';
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<NavDrawer />}>
-            <Route path='/' element={<Hero />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/portfolio' element={<Portfolio />} />
-            <Route path='/contact' element={<Contact />} />
+          <Route exact path='/' element={<NavDrawer />}>
+            <Route exact path='/' element={<Hero />} />
+            <Route exact path='/about' element={<About />} />
+            <Route exact path='/portfolio' element={<Portfolio />} />
+            <Route exact path='/contact' element={<Contact />} />
+            <Route exact path='/:id' element={<ProjectDetails />} />
           </Route>
-          <Route path='/blogs' element={<Blogs />} />
+          <Route exact path='/blogs' element={<Blogs />} />
         </Routes>
       </BrowserRouter>
     </>

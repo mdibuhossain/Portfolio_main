@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "name": "graphiXshop",
         "sites": {
             "live": "https://graphix-shop.web.app/",
@@ -18,6 +19,7 @@
         ]
     },
     {
+        "id": 2,
         "name": "WorldTrip",
         "sites": {
             "live": "https://world-trip.web.app/",
@@ -36,6 +38,7 @@
         ]
     },
     {
+        "id": 3,
         "name": "Life Dental Care",
         "sites": {
             "live": "https://life-dental-care.web.app/",
@@ -55,6 +58,7 @@
         ]
     },
     {
+        "id": 4,
         "name": "DevCourse",
         "sites": {
             "live": "https://devcourse.netlify.app/",
