@@ -1,9 +1,11 @@
 [
     {
         "name": "graphiXshop",
-        "live": "https://graphix-shop.web.app/",
-        "client_site": "https://github.com/mdibuhossain/graphiXshop-client-site",
-        "server_site": "https://github.com/mdibuhossain/graphiXshop-server-site",
+        "sites": {
+            "live": "https://graphix-shop.web.app/",
+            "client": "https://github.com/mdibuhossain/graphiXshop-client-site",
+            "server": "https://github.com/mdibuhossain/graphiXshop-server-site"
+        },
         "categories": [
             "NodeJS",
             "ReactJS",
@@ -17,9 +19,11 @@
     },
     {
         "name": "WorldTrip",
-        "live": "https://world-trip.web.app/",
-        "client_site": "https://github.com/mdibuhossain/WorldTrip-Client-site",
-        "server_site": "https://github.com/mdibuhossain/WorldTrip-Server-site",
+        "sites": {
+            "live": "https://world-trip.web.app/",
+            "client": "https://github.com/mdibuhossain/WorldTrip-Client-site",
+            "server": "https://github.com/mdibuhossain/WorldTrip-Server-site"
+        },
         "categories": [
             "NodeJS",
             "ReactJS",
@@ -33,9 +37,12 @@
     },
     {
         "name": "Life Dental Care",
-        "live": "https://life-dental-care.web.app/",
-        "client_site": "https://github.com/mdibuhossain/Life-Dental-Care-Client-site",
-        "server_site": "",
+        "sites": {
+            "live": "https://life-dental-care.web.app/",
+            "client": "https://github.com/mdibuhossain/Life-Dental-Care-Client-site",
+            "server": ""
+        },
+        "server": "",
         "categories": [
             "ReactJS",
             "JavaScript"
@@ -49,9 +56,12 @@
     },
     {
         "name": "DevCourse",
-        "live": "https://devcourse.netlify.app/",
-        "client_site": "https://github.com/mdibuhossain/DevCourse-react-route",
-        "server_site": "",
+        "sites": {
+            "live": "https://devcourse.netlify.app/",
+            "client": "https://github.com/mdibuhossain/DevCourse-react-route",
+            "server": ""
+        },
+        "server": "",
         "categories": [
             "HTML",
             "CSS",

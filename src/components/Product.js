@@ -6,7 +6,7 @@ import React from 'react';
 const previewHeight = '200px';
 
 const Product = (props) => {
-    const { name, images, categories } = props.product;
+    const { name, images, categories, sites } = props.product;
     const useStyle = makeStyles((theme) => createStyles({
         showProduct: {
             position: 'relative',
@@ -49,13 +49,28 @@ const Product = (props) => {
                         <Typography variant='h6' sx={{ fontWeight: 600 }}>
                             {name}
                         </Typography>
-                        {
-                            categories.map(tag => {
-                                return (
-                                    <Chip sx={{ mr: 1, mb: 1 }} label={tag} variant="outlined" onClick={handleClick} />
-                                )
-                            })
-                        }
+                        <Box>
+                            {
+                                categories.map(tag => {
+                                    return (
+                                        <Chip sx={{ mr: 1, my: 1 }} label={tag} variant="outlined" onClick={handleClick} />
+                                    )
+                                })
+                            }
+                        </Box>
+                        <Box>
+                            {
+                                Object.keys(sites).map(site => {
+                                    return (
+                                        <>
+                                            {
+                                                sites[site] && <Button variant="text"><a style={{ color: 'inherit', textDecoration: 'none' }} href={sites[site]} target="_blank">{site}</a></Button>
+                                            }
+                                        </>
+                                    )
+                                })
+                            }
+                        </Box>
                     </Box>
                 </Box>
             </Grid>

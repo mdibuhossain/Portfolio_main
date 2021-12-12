@@ -22,9 +22,9 @@ function App() {
             <Route path='/' element={<Hero />} />
             <Route path='/about' element={<About />} />
             <Route path='/portfolio' element={<Portfolio />} />
-            <Route path='/blogs' element={<Blogs />} />
             <Route path='/contact' element={<Contact />} />
           </Route>
+          <Route path='/blogs' element={<Blogs />} />
         </Routes>
       </BrowserRouter>
     </>
