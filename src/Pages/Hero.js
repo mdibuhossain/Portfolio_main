@@ -5,6 +5,7 @@ import { Box } from '@mui/system';
 import { Collapse, createStyles, Typography, Zoom } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import bg from '../images/bg2.png';
+import hero from '../images/hero.jpg';
 import { Parallax } from 'react-parallax';
 
 const useStyle = makeStyles((theme) => createStyles({
@@ -12,7 +13,7 @@ const useStyle = makeStyles((theme) => createStyles({
         width: '225px',
         height: '225px',
         borderRadius: '50%',
-        background: `url(https://mdibuhossain.web.app/img/hero3.jpg) center center / cover`,
+        background: `url(${hero}) center center / cover`,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
