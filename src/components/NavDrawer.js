@@ -91,7 +91,7 @@ export default function NavDrawer() {
                     </ListItem>
                 </Link>
             </List>
-            <Divider />
+            {/* <Divider /> */}
         </div>
     );
 
