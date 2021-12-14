@@ -2,6 +2,7 @@ import { Button, Container, Grid, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import emailjs from 'emailjs-com';
 import React from 'react';
+import PageTitle from '../components/PageTitle';
 import Title from '../components/Title';
 
 const Contact = () => {
@@ -18,6 +19,7 @@ const Contact = () => {
     };
     return (
         <Box id="contact" className="container" sx={{ pt: { lg: 5, xs: 7 }, px: { lg: 7, xs: 4 } }}>
+            <PageTitle title="Contact"/>
             <Title
                 title="GET IN TOUCH"
                 subtitle="CONTACT"

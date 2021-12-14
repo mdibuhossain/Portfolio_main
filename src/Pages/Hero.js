@@ -7,6 +7,7 @@ import { makeStyles } from '@mui/styles';
 import bg from '../images/bg2.png';
 import hero from '../images/hero.jpg';
 import { Parallax } from 'react-parallax';
+import PageTitle from '../components/PageTitle';
 
 const useStyle = makeStyles((theme) => createStyles({
     imgContainer: {
@@ -35,6 +36,7 @@ const Hero = () => {
     const { imgContainer, heroContainer } = useStyle();
     return (
         <Box id="top" className={heroContainer}>
+            <PageTitle title="Home"/>
             <Parallax>
                 <Particle />
             </Parallax>

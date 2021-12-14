@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { getAllProjects } from '../projectJS';
 import Product from '../components/Product';
 import Title from '../components/Title';
+import PageTitle from '../components/PageTitle';
 
 const Portfolio = () => {
     const [products, setProducts] = useState([]);
@@ -29,6 +30,7 @@ const Portfolio = () => {
     console.log(finalProducts);
     return (
         <Box id="portfolio" className="container" sx={{ pt: { lg: 5, xs: 7 }, px: { lg: 7, xs: 4 } }}>
+            <PageTitle title="Portfolio"/>
             <Title
                 title="FEATURED WORKS"
                 subtitle="PORTFOLIO"

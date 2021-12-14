@@ -13,6 +13,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { createStyles, makeStyles } from '@mui/styles';
 import heroDP from '../images/hero2.jpg';
+import PageTitle from '../components/PageTitle';
 const useStyle = makeStyles((theme) => createStyles({
     hero2: {
         background: `url(${heroDP}) center center / cover`,
@@ -52,6 +53,7 @@ const About = () => {
     const { infoList, infoSpan, whatIdoBox } = useStyle();
     return (
         <Box id="about" className="container" sx={{ pt: { lg: 5, xs: 7 }, px: { lg: 7, xs: 4 } }}>
+            <PageTitle title="About"/>
             <Title
                 title="ABOUT ME"
                 subtitle="BIOGRAPHY"
