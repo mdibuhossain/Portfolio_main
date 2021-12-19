@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material';
+import { Button, Grid, Typography } from '@mui/material';
 import { createStyles, makeStyles } from '@mui/styles';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
@@ -69,18 +69,33 @@ const ProjectDetails = () => {
                         </Grid>
                     </Grid>
                     <Grid item xs={12} md={6}>
-                        <Typography variant="h6">Features</Typography>
-                        <ul>
-                            {
-                                product?.features?.map(item => (
-                                    <li>
-                                        <Typography>
-                                            {item}
-                                        </Typography>
-                                    </li>
-                                ))
+                        <Box>
+                            <Typography variant="h6">Features</Typography>
+                            <ul>
+                                {
+                                    product?.features?.map((item, index) => (
+                                        <li key={index}>
+                                            <Typography>
+                                                {item}
+                                            </Typography>
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+                        </Box>
+                        <Box sx={{ my: 3 }}>
+                            {product?.sites &&
+                                Object.keys(product?.sites).map(site => {
+                                    return (
+                                        <span key={site}>
+                                            {
+                                                product?.sites[site] && <Button variant="contained" sx={{ mr: 2 }}><a style={{ color: 'inherit', textDecoration: 'none' }} href={product?.sites[site]} target="_blank">{site}</a></Button>
+                                            }
+                                        </span>
+                                    )
+                                })
                             }
-                        </ul>
+                        </Box>
                     </Grid>
                 </Grid>
             </Box>
