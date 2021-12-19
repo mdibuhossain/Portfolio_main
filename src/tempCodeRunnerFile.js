@@ -1,0 +1,1 @@
+User can register and log in with Google, Facebook, and email which was authenticated by Firebase.

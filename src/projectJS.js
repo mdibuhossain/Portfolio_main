@@ -1,5 +1,5 @@
 export const getAllProjects = () => {
-    return[
+    return [
         {
             id: 1,
             name: "graphiXshop",
@@ -17,6 +17,12 @@ export const getAllProjects = () => {
                 "./images/project/graphixshop/1.png",
                 "./images/project/graphixshop/2.png",
                 "./images/project/graphixshop/3.png"
+            ],
+            features: [
+                "This is a simple niche graphic card selling website where users can purchase any product from this site.",
+                "User can register and log in with email and password, user authenticated by Firebase.",
+                "Only the admin of this website is able to add a new product, delete any product, and manage orders.",
+                "Technology: HTML, CSS, Material UI, React.js, Firebase, Heroku, NodeJS, MongoDB"
             ]
         },
         {
@@ -36,6 +42,12 @@ export const getAllProjects = () => {
                 "./images/project/worldtrip/1.png",
                 "./images/project/worldtrip/2.png",
                 "./images/project/worldtrip/3.png"
+            ],
+            features: [
+                "It is a simple tourism website where users can add tour package to the cart.",
+                "User can register and log in with Google, Facebook, and email which was authenticated by Firebase.",
+                "Users is able to add a new service, and manage orders.",
+                "Technology: HTML, Tailwind CSS, React.js, Firebase, Heroku, NodeJS, MongoDB"
             ]
         },
         {
@@ -56,6 +68,12 @@ export const getAllProjects = () => {
                 "./images/project/lifeDentalCare/2.png",
                 "./images/project/lifeDentalCare/3.png",
                 "./images/project/lifeDentalCare/4.png"
+            ],
+            features: [
+                "A simple dental clinic website where users can buy medical accessories and take various dental treatments.",
+                "Users can register and log in with Google, Facebook, and email which was authenticated by Firebase.",
+                "Users can take appointments from the appointment section.",
+                "Technology: HTML, Tailwind CSS, Tilt.js, ReactJS, SwiperJS, Firebase auth"
             ]
         },
         {
@@ -78,6 +96,10 @@ export const getAllProjects = () => {
                 "./images/project/devCourse/2.png",
                 "./images/project/devCourse/3.png",
                 "./images/project/devCourse/4.png"
+            ],
+            features: [
+                "A simple educational website where users can enroll in different types of courses.",
+                "Technology: HTML, Bootstrap, ReactJS"
             ]
         }
     ]

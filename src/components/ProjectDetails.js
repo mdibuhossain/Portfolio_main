@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import { createStyles, makeStyles } from '@mui/styles';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
@@ -47,10 +47,10 @@ const ProjectDetails = () => {
                 subtitle="PROJECT"
             />
             <Box>
-                <Grid container spacing={2}>
+                <Grid container spacing={5}>
                     <Grid item xs={12} md={6}>
                         <Box sx={{ width: '100%', height: '300px', padding: '8px', mb: 1, border: '1px solid white', overflow: 'hidden', borderRadius: 2 }}>
-                            <Box sx={{position: 'relative', height: '100%', overflow: 'hidden' }}>
+                            <Box sx={{ position: 'relative', height: '100%', overflow: 'hidden' }}>
                                 <img className={currentImgStyle} src={currentImg} alt="" />
                             </Box>
                         </Box>
@@ -69,7 +69,18 @@ const ProjectDetails = () => {
                         </Grid>
                     </Grid>
                     <Grid item xs={12} md={6}>
-
+                        <Typography variant="h6">Features</Typography>
+                        <ul>
+                            {
+                                product?.features?.map(item => (
+                                    <li>
+                                        <Typography>
+                                            {item}
+                                        </Typography>
+                                    </li>
+                                ))
+                            }
+                        </ul>
                     </Grid>
                 </Grid>
             </Box>
