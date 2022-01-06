@@ -40,15 +40,15 @@
             "NodeJS"
         ],
         "images": [
-            "./images/project/FitnessCloud/1.png",
-            "./images/project/FitnessCloud/2.png",
-            "./images/project/FitnessCloud/3.png",
-            "./images/project/FitnessCloud/4.png",
-            "./images/project/FitnessCloud/5.png",
-            "./images/project/FitnessCloud/6.png",
-            "./images/project/FitnessCloud/7.png",
-            "./images/project/FitnessCloud/8.png",
-            "./images/project/FitnessCloud/9.png"
+            "./images/project/fitnessCloud/1.png",
+            "./images/project/fitnessCloud/2.png",
+            "./images/project/fitnessCloud/3.png",
+            "./images/project/fitnessCloud/4.png",
+            "./images/project/fitnessCloud/5.png",
+            "./images/project/fitnessCloud/6.png",
+            "./images/project/fitnessCloud/7.png",
+            "./images/project/fitnessCloud/8.png",
+            "./images/project/fitnessCloud/9.png"
         ],
         "features": [
             "Coming soon"
