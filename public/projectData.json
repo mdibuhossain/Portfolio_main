@@ -26,6 +26,36 @@
     },
     {
         "id": 2,
+        "name": "FitnessCloud",
+        "sites": {
+            "live": "https://fitness-26c3f.web.app/home",
+            "client": "https://github.com/mdibuhossain/fitness_cloud-client_site",
+            "server": "https://github.com/mdibuhossain/fitness_cloud-server_site"
+        },
+        "categories": [
+            "JavaScript",
+            "ReactJS",
+            "Redux",
+            "Firebase",
+            "NodeJS"
+        ],
+        "images": [
+            "./images/project/FitnessCloud/1.png",
+            "./images/project/FitnessCloud/2.png",
+            "./images/project/FitnessCloud/3.png",
+            "./images/project/FitnessCloud/4.png",
+            "./images/project/FitnessCloud/5.png",
+            "./images/project/FitnessCloud/6.png",
+            "./images/project/FitnessCloud/7.png",
+            "./images/project/FitnessCloud/8.png",
+            "./images/project/FitnessCloud/9.png"
+        ],
+        "features": [
+            "Coming soon"
+        ]
+    },
+    {
+        "id": 2,
         "name": "WorldTrip",
         "sites": {
             "live": "https://world-trip.web.app/",
