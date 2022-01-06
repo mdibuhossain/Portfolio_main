@@ -30,7 +30,7 @@ const Portfolio = () => {
     console.log(finalProducts);
     return (
         <Box id="portfolio" className="container" sx={{ pt: { lg: 5, xs: 7 }, px: { lg: 7, xs: 4 } }}>
-            <PageTitle title="Portfolio"/>
+            <PageTitle title="Portfolio" />
             <Title
                 title="FEATURED WORKS"
                 subtitle="PORTFOLIO"
@@ -40,6 +40,7 @@ const Portfolio = () => {
                     <Tab name="JavaScript" label="All" sx={{ color: 'white', fontWeight: '600' }} />
                     <Tab name="NodeJS" label="NodeJS" sx={{ color: 'white', fontWeight: '600' }} />
                     <Tab name="ReactJS" label="ReactJS" sx={{ color: 'white', fontWeight: '600' }} />
+                    <Tab name="Redux" label="Redux" sx={{ color: 'white', fontWeight: '600' }} />
                 </Tabs>
             </Box>
             <Box>
