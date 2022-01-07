@@ -2,7 +2,6 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
@@ -16,10 +15,6 @@ import {
     Outlet
 } from "react-router-dom";
 import { createStyles, makeStyles } from '@mui/styles';
-import Hero from '../Pages/Hero';
-import About from '../Pages/About';
-import Portfolio from '../Pages/Portfolio';
-import Contact from '../Pages/Contact';
 import { NavHashLink as Link } from 'react-router-hash-link';
 
 

@@ -4,8 +4,6 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Link,
-  useRouteMatch
 } from "react-router-dom";
 import Hero from './Pages/Hero';
 import Portfolio from './Pages/Portfolio';

@@ -1,8 +1,5 @@
-import { Box } from '@mui/system';
 import React from 'react';
-import { Parallax } from 'react-parallax';
 import Particles from 'react-tsparticles';
-import bg from '../images/bg.jpg';
 
 const Particle = () => {
     const particlesInit = (main) => {

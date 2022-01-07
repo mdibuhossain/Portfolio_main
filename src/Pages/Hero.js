@@ -2,7 +2,7 @@ import React from 'react';
 import Particle from '../components/Particle';
 import Typical from 'react-typical';
 import { Box } from '@mui/system';
-import { Collapse, createStyles, Typography, Zoom } from '@mui/material';
+import { createStyles, Typography, Zoom } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import bg from '../images/bg2.png';
 import hero from '../images/hero.jpg';
@@ -36,7 +36,7 @@ const Hero = () => {
     const { imgContainer, heroContainer } = useStyle();
     return (
         <Box id="top" className={heroContainer}>
-            <PageTitle title="Home"/>
+            <PageTitle title="Home" />
             <Parallax>
                 <Particle />
             </Parallax>

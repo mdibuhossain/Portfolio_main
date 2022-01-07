@@ -1,16 +1,8 @@
-import { Button, Container, Grid, LinearProgress, linearProgressClasses, Typography } from '@mui/material';
-import Tooltip from '@mui/material/Tooltip';
-import { Box, height, lineHeight } from '@mui/system';
+import { Grid, LinearProgress, linearProgressClasses, Typography } from '@mui/material';
+import { Box } from '@mui/system';
 import { styled } from '@mui/material/styles';
 import React from 'react';
 import Title from '../components/Title';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import { createStyles, makeStyles } from '@mui/styles';
 import heroDP from '../images/hero2.jpg';
 import PageTitle from '../components/PageTitle';
@@ -53,7 +45,7 @@ const About = () => {
     const { infoList, infoSpan, whatIdoBox } = useStyle();
     return (
         <Box id="about" className="container" sx={{ pt: { lg: 5, xs: 7 }, px: { lg: 7, xs: 4 } }}>
-            <PageTitle title="About"/>
+            <PageTitle title="About" />
             <Title
                 title="ABOUT ME"
                 subtitle="BIOGRAPHY"
@@ -92,7 +84,7 @@ const About = () => {
                             </div>
                         </ul>
                     </Box>
-                    <a className="hero-btn" target="_blank" href="https://drive.google.com/file/d/1cVVt57FXd3bKVXZyzUltwNDNS9PcbHHz/view?usp=sharing">
+                    <a className="hero-btn" target="_blank" href="https://drive.google.com/file/d/1cVVt57FXd3bKVXZyzUltwNDNS9PcbHHz/view?usp=sharing" rel="noopener noreferrer">
                         <Typography variant="button">
                             Download Resume
                         </Typography>

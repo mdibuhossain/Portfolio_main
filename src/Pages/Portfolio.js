@@ -1,4 +1,4 @@
-import { Grid, Paper, Tab, Tabs } from '@mui/material';
+import { Grid, Tab, Tabs } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import Product from '../components/Product';

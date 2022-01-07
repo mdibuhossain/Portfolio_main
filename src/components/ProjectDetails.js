@@ -3,7 +3,7 @@ import { createStyles, makeStyles } from '@mui/styles';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getAllProjects } from '../projectJS';
+import Flip from 'react-reveal/Flip';
 import Title from './Title';
 
 const ProjectDetails = () => {
@@ -21,7 +21,7 @@ const ProjectDetails = () => {
     useEffect(() => {
         const filteredData = totalProduct.find(pro => pro.id === parseInt(id));
         setProduct(filteredData);
-    }, [totalProduct])
+    }, [totalProduct, id])
     useEffect(() => {
         setCurrentImg(product?.images && product?.images[0]);
     }, [product])
@@ -60,7 +60,9 @@ const ProjectDetails = () => {
                                     return (
                                         <Grid item xs={2} key={index}>
                                             <Box onClick={() => currentImgHandler(img)} sx={{ height: '60px', overflow: 'hidden' }}>
-                                                <img style={{ width: '100%' }} src={img} alt="" />
+                                                <Flip left>
+                                                    <img style={{ width: '100%' }} src={img} alt="" />
+                                                </Flip>
                                             </Box>
                                         </Grid>
                                     )
@@ -89,7 +91,7 @@ const ProjectDetails = () => {
                                     return (
                                         <span key={site}>
                                             {
-                                                product?.sites[site] && <Button variant="contained" sx={{ mr: 2 }}><a style={{ color: 'inherit', textDecoration: 'none' }} href={product?.sites[site]} target="_blank">{site}</a></Button>
+                                                product?.sites[site] && <Button variant="contained" sx={{ mr: 2 }}><a style={{ color: 'inherit', textDecoration: 'none' }} href={product?.sites[site]} target="_blank" rel="noopener noreferrer">{site}</a></Button>
                                             }
                                         </span>
                                     )
