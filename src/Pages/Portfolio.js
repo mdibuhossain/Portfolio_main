@@ -20,7 +20,7 @@ const Portfolio = () => {
 
 
     const [value, setValue] = React.useState(0);
-    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    const handleChange = (event, newValue) => {
         const query = (event.target.name);
         setValue(newValue);
         const filterProduct = products.filter(product => product?.categories?.includes(query));
