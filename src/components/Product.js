@@ -2,7 +2,6 @@ import { Grid, Typography, Button, Chip } from '@mui/material';
 import { createStyles, makeStyles } from '@mui/styles';
 import { Box } from '@mui/system';
 import React from 'react';
-import Fade from 'react-reveal/Fade';
 import { useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 
@@ -51,40 +50,38 @@ const Product = (props) => {
     return (
         <>
             <Grid item xs={12} md={4}>
-                <Fade right>
-                    <Box className={imgContainer}>
-                        <Box onClick={() => visitProject(id)} className={showProduct}>
-                            <img className={projectImg} src={images[0]} alt="" />
+                <Box className={imgContainer}>
+                    <Box onClick={() => visitProject(id)} className={showProduct}>
+                        <img className={projectImg} src={images[0]} alt="" />
+                    </Box>
+                    <Box sx={{ padding: '15px' }}>
+                        <Typography variant='h6' sx={{ fontWeight: 600 }}>
+                            {name}
+                        </Typography>
+                        <Box>
+                            {
+                                categories.map(tag => {
+                                    return (
+                                        <Chip key={tag} sx={{ mr: 1, my: 1 }} label={tag} variant="outlined" onClick={handleClick} />
+                                    )
+                                })
+                            }
                         </Box>
-                        <Box sx={{ padding: '15px' }}>
-                            <Typography variant='h6' sx={{ fontWeight: 600 }}>
-                                {name}
-                            </Typography>
-                            <Box>
-                                {
-                                    categories.map(tag => {
-                                        return (
-                                            <Chip key={tag} sx={{ mr: 1, my: 1 }} label={tag} variant="outlined" onClick={handleClick} />
-                                        )
-                                    })
-                                }
-                            </Box>
-                            <Box>
-                                {
-                                    Object.keys(sites).map(site => {
-                                        return (
-                                            <span key={site}>
-                                                {
-                                                    sites[site] && <Button variant="text"><a style={{ color: 'inherit', textDecoration: 'none' }} href={sites[site]} target="_blank">{site}</a></Button>
-                                                }
-                                            </span>
-                                        )
-                                    })
-                                }
-                            </Box>
+                        <Box>
+                            {
+                                Object.keys(sites).map(site => {
+                                    return (
+                                        <span key={site}>
+                                            {
+                                                sites[site] && <Button variant="text"><a style={{ color: 'inherit', textDecoration: 'none' }} href={sites[site]} target="_blank">{site}</a></Button>
+                                            }
+                                        </span>
+                                    )
+                                })
+                            }
                         </Box>
                     </Box>
-                </Fade>
+                </Box>
             </Grid>
         </>
     );

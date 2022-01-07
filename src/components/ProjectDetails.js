@@ -56,9 +56,9 @@ const ProjectDetails = () => {
                         </Box>
                         <Grid container spacing={2}>
                             {
-                                product?.images?.map(img => {
+                                product?.images?.map((img, index) => {
                                     return (
-                                        <Grid item xs={2} key={img}>
+                                        <Grid item xs={2} key={index}>
                                             <Box onClick={() => currentImgHandler(img)} sx={{ height: '60px', overflow: 'hidden' }}>
                                                 <img style={{ width: '100%' }} src={img} alt="" />
                                             </Box>
