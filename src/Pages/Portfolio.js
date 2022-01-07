@@ -1,7 +1,6 @@
 import { Grid, Paper, Tab, Tabs } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
-import { getAllProjects } from '../projectJS';
 import Product from '../components/Product';
 import Title from '../components/Title';
 import PageTitle from '../components/PageTitle';
