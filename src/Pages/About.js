@@ -6,6 +6,8 @@ import Title from '../components/Title';
 import { createStyles, makeStyles } from '@mui/styles';
 import heroDP from '../images/hero2.jpg';
 import PageTitle from '../components/PageTitle';
+import ProgressBar from "@ramonak/react-progress-bar";
+
 const useStyle = makeStyles((theme) => createStyles({
     hero2: {
         background: `url(${heroDP}) center center / cover`,
@@ -125,31 +127,61 @@ const About = () => {
                     <Typography sx={{ fontWeight: '600' }}>
                         HTML
                     </Typography>
-                    <BorderLinearProgress variant="determinate" value={95} />
+                    <ProgressBar
+                        animateOnRender="true"
+                        labelAlignment='outside'
+                        bgColor="#1A90FF"
+                        height='12px'
+                        completed={95}
+                    />
                 </Grid>
                 <Grid item xs={12}>
                     <Typography sx={{ fontWeight: '600' }}>
                         CSS
                     </Typography>
-                    <BorderLinearProgress variant="determinate" value={90} />
+                    <ProgressBar
+                        animateOnRender="true"
+                        labelAlignment='outside'
+                        bgColor="#1A90FF"
+                        height='12px'
+                        completed={90}
+                    />
                 </Grid>
                 <Grid item xs={12}>
                     <Typography sx={{ fontWeight: '600' }}>
                         Bootstrap
                     </Typography>
-                    <BorderLinearProgress variant="determinate" value={90} />
+                    <ProgressBar
+                        animateOnRender="true"
+                        labelAlignment='outside'
+                        bgColor="#1A90FF"
+                        height='12px'
+                        completed={90}
+                    />
                 </Grid>
                 <Grid item xs={12}>
                     <Typography sx={{ fontWeight: '600' }}>
                         JavaScript
                     </Typography>
-                    <BorderLinearProgress variant="determinate" value={55} />
+                    <ProgressBar
+                        animateOnRender="true"
+                        labelAlignment='outside'
+                        bgColor="#1A90FF"
+                        height='12px'
+                        completed={55}
+                    />
                 </Grid>
                 <Grid item xs={12}>
                     <Typography sx={{ fontWeight: '600' }}>
                         React
                     </Typography>
-                    <BorderLinearProgress variant="determinate" value={50} />
+                    <ProgressBar
+                        animateOnRender="true"
+                        labelAlignment='outside'
+                        bgColor="#1A90FF"
+                        height='12px'
+                        completed={50}
+                    />
                 </Grid>
             </Grid>
         </Box>
