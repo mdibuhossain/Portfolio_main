@@ -8,7 +8,7 @@ import Zoom from 'react-reveal/Zoom'
 const previewHeight = '200px';
 
 const Product = (props) => {
-    const { name, images, categories, sites, id } = props.product;
+    const { name, images, categories, sites, id, team_project } = props.product;
     const navigate = useNavigate();
     const visitProject = (id) => {
         navigate(`/${id}`);
@@ -57,7 +57,7 @@ const Product = (props) => {
                         </Box>
                         <Box sx={{ padding: '15px' }}>
                             <Typography variant='h6' sx={{ fontWeight: 600 }}>
-                                {name}
+                                {name} {team_project && <Chip sx={{fontWeight: 400}} label="Team project" color="success" size="small" />}
                             </Typography>
                             <Box>
                                 {

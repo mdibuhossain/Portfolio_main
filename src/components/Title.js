@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import { Chip, Typography } from '@mui/material';
 import { createStyles, makeStyles } from '@mui/styles';
 import React from 'react';
 
@@ -10,7 +10,7 @@ const useStyle = makeStyles((theme) => createStyles({
     }
 }));
 
-const Title = ({ title, subtitle }) => {
+const Title = ({ title, subtitle, team_project }) => {
     const { textField } = useStyle();
     return (
         <div className={textField}>
@@ -20,6 +20,7 @@ const Title = ({ title, subtitle }) => {
             <Typography variant="h4">
                 {title}
             </Typography>
+            {team_project && <Chip label="Team project" color="success" size="small" sx={{ mt: 1 }} />}
         </div>
     );
 };

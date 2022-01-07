@@ -1,4 +1,4 @@
-import { Button, Grid, Typography } from '@mui/material';
+import { Button, Chip, Grid, Typography } from '@mui/material';
 import { createStyles, makeStyles } from '@mui/styles';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
@@ -45,6 +45,7 @@ const ProjectDetails = () => {
             <Title
                 title={product?.name}
                 subtitle="PROJECT"
+                team_project={product?.team_project}
             />
             <Box>
                 <Grid container spacing={5}>
@@ -72,11 +73,11 @@ const ProjectDetails = () => {
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <Box>
-                            <Typography variant="h6">Features</Typography>
+                            <Typography variant="h6" sx={{ mb: 2 }}>Features</Typography>
                             <ul>
                                 {
                                     product?.features?.map((item, index) => (
-                                        <li key={index}>
+                                        <li key={index} style={{ marginLeft: '20px' }}>
                                             <Typography>
                                                 {item}
                                             </Typography>
@@ -84,6 +85,13 @@ const ProjectDetails = () => {
                                     ))
                                 }
                             </ul>
+                            <Typography variant="h6" sx={{ my: 2 }}>Technologies</Typography>
+                            {
+                                product?.technology &&
+                                product?.technology.map(tech =>
+                                    <Chip key={tech} sx={{ mr: 1, my: 1 }} label={tech} variant="outlined" />
+                                )
+                            }
                         </Box>
                         <Box sx={{ my: 3 }}>
                             {product?.sites &&
