@@ -41,7 +41,7 @@
         "id": 2,
         "name": "FitnessCloud",
         "sites": {
-            "live": "https://fitness-26c3f.web.app/home",
+            "live": "https://fitness-ui.web.app/",
             "client": "https://github.com/mdibuhossain/fitness_cloud-client_site",
             "server": "https://github.com/mdibuhossain/fitness_cloud-server_site"
         },
