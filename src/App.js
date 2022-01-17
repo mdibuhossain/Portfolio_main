@@ -11,20 +11,22 @@ import Contact from './Pages/Contact';
 import About from './Pages/About';
 import Blogs from './Pages/Blogs';
 import ProjectDetails from './components/ProjectDetails';
+import NotFound from './Pages/NotFound';
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route exact path='/' element={<NavDrawer />}>
-            <Route exact path='/' element={<Hero />} />
-            <Route exact path='/top' element={<Hero />} />
-            <Route exact path='/about' element={<About />} />
-            <Route exact path='/portfolio' element={<Portfolio />} />
-            <Route exact path='/contact' element={<Contact />} />
-            <Route exact path='/:id' element={<ProjectDetails />} />
-            <Route exact path='/blogs' element={<Blogs />} />
+          <Route path='/' element={<NavDrawer />}>
+            <Route path='/' element={<Hero />} />
+            <Route path='/top' element={<Hero />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/portfolio' element={<Portfolio />} />
+            <Route path='/portfolio/:id' element={<ProjectDetails />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/blogs' element={<Blogs />} />
+            <Route path='*' element={<NotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>

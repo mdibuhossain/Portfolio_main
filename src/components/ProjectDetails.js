@@ -12,7 +12,7 @@ const ProjectDetails = () => {
     const [product, setProduct] = useState({});
     const [currentImg, setCurrentImg] = useState('');
     useEffect(() => {
-        fetch('./projectData.json')
+        fetch('/projectData.json')
             .then(res => res.json())
             .then(data => {
                 setTotalProduct(data);
