@@ -24,9 +24,9 @@
             "MongoDB"
         ],
         "images": [
-            "/images/project/graphixshop/1.png",
-            "/images/project/graphixshop/2.png",
-            "/images/project/graphixshop/3.png"
+            "./images/project/graphixshop/1.png",
+            "./images/project/graphixshop/2.png",
+            "./images/project/graphixshop/3.png"
         ],
         "features": [
             "This is a simple niche graphic card selling website where users can purchase any product from this site.",
@@ -64,15 +64,15 @@
             "MongoDB"
         ],
         "images": [
-            "/images/project/fitnessCloud/1.png",
-            "/images/project/fitnessCloud/2.png",
-            "/images/project/fitnessCloud/3.png",
-            "/images/project/fitnessCloud/4.png",
-            "/images/project/fitnessCloud/5.png",
-            "/images/project/fitnessCloud/6.png",
-            "/images/project/fitnessCloud/7.png",
-            "/images/project/fitnessCloud/8.png",
-            "/images/project/fitnessCloud/9.png"
+            "./images/project/fitnessCloud/1.png",
+            "./images/project/fitnessCloud/2.png",
+            "./images/project/fitnessCloud/3.png",
+            "./images/project/fitnessCloud/4.png",
+            "./images/project/fitnessCloud/5.png",
+            "./images/project/fitnessCloud/6.png",
+            "./images/project/fitnessCloud/7.png",
+            "./images/project/fitnessCloud/8.png",
+            "./images/project/fitnessCloud/9.png"
         ],
         "features": [
             "This is a simple Gym club website where users can enroll any courses from this site.",
@@ -81,6 +81,43 @@
             "can enroll any courses and also able to cancel any courses of their wish."
         ],
         "team_project": true
+    },
+    {
+        "id": 6,
+        "name": "TravelPagla",
+        "sites": {
+            "live": "https://travel-pagla.web.app/",
+            "client": "https://github.com/mdibuhossain/travel-agency-endgame-client-site",
+            "server": "https://github.com/mdibuhossain/travel-agency-endgame-server-site"
+        },
+        "categories": [
+            "NodeJS",
+            "ReactJS",
+            "JavaScript"
+        ],
+        "technology": [
+            "HTML",
+            "CSS3",
+            "JavaScript",
+            "Tailwind CSS",
+            "ReactJS",
+            "React Slick",
+            "Firebase auth",
+            "Heroku",
+            "NodeJS",
+            "MongoDB"
+        ],
+        "images": [
+            "./images/project/travelPagla/1.png",
+            "./images/project/travelPagla/2.png",
+            "./images/project/travelPagla/3.png",
+            "./images/project/travelPagla/4.png",
+            "./images/project/travelPagla/5.png",
+            "./images/project/travelPagla/6.png"
+        ],
+        "features": [
+            "coming soon"
+        ]
     },
     {
         "id": 3,
@@ -95,10 +132,18 @@
             "ReactJS",
             "JavaScript"
         ],
+        "technology": [
+            "HTML",
+            "CSS3",
+            "JavaScript",
+            "Tailwind CSS",
+            "ReactJS",
+            "Firebase auth"
+        ],
         "images": [
-            "/images/project/worldtrip/1.png",
-            "/images/project/worldtrip/2.png",
-            "/images/project/worldtrip/3.png"
+            "./images/project/worldtrip/1.png",
+            "./images/project/worldtrip/2.png",
+            "./images/project/worldtrip/3.png"
         ],
         "features": [
             "It is a simple tourism website where users can add tour package to the cart.",
@@ -131,10 +176,10 @@
             "Firebase auth"
         ],
         "images": [
-            "/images/project/lifeDentalCare/1.png",
-            "/images/project/lifeDentalCare/2.png",
-            "/images/project/lifeDentalCare/3.png",
-            "/images/project/lifeDentalCare/4.png"
+            "./images/project/lifeDentalCare/1.png",
+            "./images/project/lifeDentalCare/2.png",
+            "./images/project/lifeDentalCare/3.png",
+            "./images/project/lifeDentalCare/4.png"
         ],
         "features": [
             "A simple dental clinic website where users can buy medical accessories and take various dental treatments.",
@@ -165,10 +210,10 @@
             "ReactJS"
         ],
         "images": [
-            "/images/project/devCourse/1.png",
-            "/images/project/devCourse/2.png",
-            "/images/project/devCourse/3.png",
-            "/images/project/devCourse/4.png"
+            "./images/project/devCourse/1.png",
+            "./images/project/devCourse/2.png",
+            "./images/project/devCourse/3.png",
+            "./images/project/devCourse/4.png"
         ],
         "features": [
             "A simple educational website where users can enroll in different types of courses."
