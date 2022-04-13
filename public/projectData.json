@@ -80,7 +80,7 @@
             "can register and log in with email and password, authenticated by firebase",
             "can enroll any courses and also able to cancel any courses of their wish."
         ],
-        "team_project": true
+        "team_project": false
     },
     {
         "id": 6,
