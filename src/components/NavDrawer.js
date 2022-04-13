@@ -69,14 +69,14 @@ export default function NavDrawer() {
                         <ListItemText primary="Portfolio" />
                     </ListItem>
                 </Link>
-                <Link smooth={true} to='blogs' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
+                {/* <Link smooth={true} to='blogs' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button>
                         <ListItemIcon>
                             <InboxIcon className={menuIcon} />
                         </ListItemIcon>
                         <ListItemText primary="Blogs" />
                     </ListItem>
-                </Link>
+                </Link> */}
                 <Link smooth={true} to='contact' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button>
                         <ListItemIcon>

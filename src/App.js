@@ -9,7 +9,7 @@ import Hero from './Pages/Hero';
 import Portfolio from './Pages/Portfolio';
 import Contact from './Pages/Contact';
 import About from './Pages/About';
-import Blogs from './Pages/Blogs';
+// import Blogs from './Pages/Blogs';
 import ProjectDetails from './components/ProjectDetails';
 import NotFound from './Pages/NotFound';
 
@@ -25,7 +25,7 @@ function App() {
             <Route path='/portfolio' element={<Portfolio />} />
             <Route path='/portfolio/:id' element={<ProjectDetails />} />
             <Route path='/contact' element={<Contact />} />
-            <Route path='/blogs' element={<Blogs />} />
+            {/* <Route path='/blogs' element={<Blogs />} /> */}
             <Route path='*' element={<NotFound />} />
           </Route>
         </Routes>
