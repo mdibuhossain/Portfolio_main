@@ -27,14 +27,12 @@ const useStyle = makeStyles((theme) => createStyles({
     },
     linkStyle: {
         display: 'flex',
-        // alignItems: 'center',
-        // justifyContent: 'center',
         textDecoration: 'none',
         color: 'inherit',
     },
     linkInnerStyle: {
         width: '100%',
-        padding: '10px 0',
+        padding: '15px 0',
         fontWeight: '300 !important',
         letterSpacing: '5px !important',
         borderBottom: '0.75px solid rgba(200, 200, 200, 0.125)',
