@@ -16,7 +16,7 @@ import {
 } from "react-router-dom";
 import { createStyles, makeStyles } from '@mui/styles';
 import { NavHashLink as Link } from 'react-router-hash-link';
-import { Divider } from '@mui/material';
+import { Divider, Typography } from '@mui/material';
 
 
 const drawerWidth = 400;
@@ -24,17 +24,29 @@ const drawerWidth = 400;
 const useStyle = makeStyles((theme) => createStyles({
     menuIcon: {
         color: 'white'
+    },
+    linkStyle: {
+        display: 'flex',
+        // alignItems: 'center',
+        // justifyContent: 'center',
+        textDecoration: 'none',
+        color: 'inherit',
+    },
+    linkInnerStyle: {
+        width: '100%',
+        padding: '10px 0',
+        fontWeight: '300 !important',
+        letterSpacing: '5px !important',
+        borderBottom: '0.75px solid rgba(200, 200, 200, 0.125)',
+        transition: '0.225s ease-in-out',
+        '&:hover': {
+            fontWeight: '300',
+            color: 'rgb(132, 193, 255) !important',
+            borderBottom: '0.75px solid rgb(132, 193, 255)',
+        },
     }
 }));
 
-const linkStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    textDecoration: 'none',
-    color: 'inherit',
-    borderBottom: '0.75px solid rgba(200, 200, 200, 0.125)'
-}
 
 export default function NavDrawer() {
     const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -43,7 +55,7 @@ export default function NavDrawer() {
         setMobileOpen(!mobileOpen);
     };
 
-    // const { menuIcon } = useStyle();
+    const { linkInnerStyle, linkStyle } = useStyle();
     const drawer = (
         <div >
             <Toolbar />
@@ -51,34 +63,34 @@ export default function NavDrawer() {
             <List>
                 <Link smooth={true}
                     to='top'
-                    style={linkStyle}
+                    className={linkStyle}
                 >
-                    <ListItem button>
-                        <ListItemText primary="Hero" />
-                    </ListItem>
+                    {/* <ListItem button> */}
+                    <Typography className={linkInnerStyle}>Hero</Typography>
+                    {/* </ListItem> */}
                 </Link>
                 <Link smooth={true}
                     to='about'
-                    style={linkStyle}
+                    className={linkStyle}
                 >
-                    <ListItem button>
-                        <ListItemText primary="About me" />
-                    </ListItem>
+                    {/* <ListItem button> */}
+                    <Typography className={linkInnerStyle}>About me</Typography>
+                    {/* </ListItem> */}
                 </Link>
-                <Link smooth={true} to='portfolio' style={linkStyle}>
-                    <ListItem button>
-                        <ListItemText primary="Portfolio" />
-                    </ListItem>
+                <Link smooth={true} to='portfolio' className={linkStyle}>
+                    {/* <ListItem button> */}
+                    <Typography className={linkInnerStyle}>Portfolio</Typography>
+                    {/* </ListItem> */}
                 </Link>
-                {/* <Link smooth={true} to='blogs' style={linkStyle}>
-                    <ListItem button>
-                        <ListItemText primary="Blogs" />
-                    </ListItem>
+                {/* <Link smooth={true} to='blogs' className={linkStyle}>
+                    // <ListItem button>
+                        <Typography className={linkInnerStyle}>Blogs</Typography>
+                    // </ListItem>
                 </Link> */}
-                <Link smooth={true} to='contact' style={linkStyle}>
-                    <ListItem button>
-                        <ListItemText primary="Contact me" />
-                    </ListItem>
+                <Link smooth={true} to='contact' className={linkStyle}>
+                    {/* <ListItem button> */}
+                    <Typography className={linkInnerStyle}>Contact me</Typography>
+                    {/* </ListItem> */}
                 </Link>
             </List>
             {/* <Divider /> */}
