@@ -1,6 +1,6 @@
-import { Grid, LinearProgress, linearProgressClasses, Typography } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import { styled } from '@mui/material/styles';
+// import { styled } from '@mui/material/styles';
 import React from 'react';
 import Title from '../components/Title';
 import { createStyles, makeStyles } from '@mui/styles';
@@ -32,17 +32,17 @@ const useStyle = makeStyles((theme) => createStyles({
     }
 }));
 const About = () => {
-    const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
-        height: 10,
-        borderRadius: 5,
-        [`&.${linearProgressClasses.colorPrimary}`]: {
-            backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 200 : 800],
-        },
-        [`& .${linearProgressClasses.bar}`]: {
-            borderRadius: 5,
-            backgroundColor: theme.palette.mode === 'light' ? '#1a90ff' : '#308fe8',
-        },
-    }));
+    // const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
+    //     height: 10,
+    //     borderRadius: 5,
+    //     [`&.${linearProgressClasses.colorPrimary}`]: {
+    //         backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 200 : 800],
+    //     },
+    //     [`& .${linearProgressClasses.bar}`]: {
+    //         borderRadius: 5,
+    //         backgroundColor: theme.palette.mode === 'light' ? '#1a90ff' : '#308fe8',
+    //     },
+    // }));
 
     const { infoList, infoSpan, whatIdoBox } = useStyle();
     return (
@@ -128,7 +128,7 @@ const About = () => {
                         HTML
                     </Typography>
                     <ProgressBar
-                        animateOnRender="true"
+                        animateOnRender={true}
                         labelAlignment='outside'
                         bgColor="#1A90FF"
                         height='12px'
@@ -140,7 +140,7 @@ const About = () => {
                         CSS
                     </Typography>
                     <ProgressBar
-                        animateOnRender="true"
+                        animateOnRender={true}
                         labelAlignment='outside'
                         bgColor="#1A90FF"
                         height='12px'
@@ -152,7 +152,7 @@ const About = () => {
                         Bootstrap
                     </Typography>
                     <ProgressBar
-                        animateOnRender="true"
+                        animateOnRender={true}
                         labelAlignment='outside'
                         bgColor="#1A90FF"
                         height='12px'
@@ -164,7 +164,7 @@ const About = () => {
                         JavaScript
                     </Typography>
                     <ProgressBar
-                        animateOnRender="true"
+                        animateOnRender={true}
                         labelAlignment='outside'
                         bgColor="#1A90FF"
                         height='12px'
@@ -176,7 +176,7 @@ const About = () => {
                         React
                     </Typography>
                     <ProgressBar
-                        animateOnRender="true"
+                        animateOnRender={true}
                         labelAlignment='outside'
                         bgColor="#1A90FF"
                         height='12px'

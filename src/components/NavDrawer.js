@@ -16,7 +16,7 @@ import { NavHashLink as Link } from 'react-router-hash-link';
 import { Typography } from '@mui/material';
 
 
-const drawerWidth = 300;
+const drawerWidth = 400;
 
 const useStyle = makeStyles((theme) => createStyles({
     menuIcon: {
@@ -86,17 +86,27 @@ export default function NavDrawer() {
                     <Typography onClick={handleDrawerToggle} className={linkInnerStyle}>About me</Typography>
                     {/* </ListItem> */}
                 </Link>
-                <Link smooth={true} to='portfolio' className={linkStyle}>
+                <Link smooth={true}
+                    to='portfolio'
+                    className={linkStyle}
+                >
                     {/* <ListItem button> */}
                     <Typography onClick={handleDrawerToggle} className={linkInnerStyle}>Portfolio</Typography>
                     {/* </ListItem> */}
                 </Link>
-                {/* <Link smooth={true} to='blogs' className={linkStyle}>
+                {/* <Link
+                 smooth={true}
+                  to='blogs' 
+                  className={linkStyle}
+                  >
                     // <ListItem button>
                         <Typography onClick={handleDrawerToggle} className={linkInnerStyle}>Blogs</Typography>
                     // </ListItem>
                 </Link> */}
-                <Link smooth={true} to='contact' className={linkStyle}>
+                <Link smooth={true}
+                    to='contact'
+                    className={linkStyle}
+                >
                     {/* <ListItem button> */}
                     <Typography onClick={handleDrawerToggle} className={linkInnerStyle}>Contact me</Typography>
                     {/* </ListItem> */}
@@ -148,7 +158,7 @@ export default function NavDrawer() {
                     }}
                     sx={{
                         display: { xs: 'block', lg: 'none' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: (drawerWidth - 100) },
                     }}
                 >
                     <div style={{ position: 'absolute', top: '0', left: '0', right: '0', bottom: '0', backgroundColor: 'rgba(17, 17, 17, 1)', filter: 'blur(3px)', zIndex: '-1' }}></div>

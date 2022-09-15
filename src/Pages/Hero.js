@@ -1,12 +1,12 @@
 import React from 'react';
-import Particle from '../components/Particle';
+// import Particle from '../components/Particle';
 import Typical from 'react-typical';
 import { Box } from '@mui/system';
 import { createStyles, Typography, Zoom } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import bg from '../images/bg2.png';
 import hero from '../images/hero.jpg';
-import { Parallax } from 'react-parallax';
+// import { Parallax } from 'react-parallax';
 import PageTitle from '../components/PageTitle';
 
 const useStyle = makeStyles((theme) => createStyles({
@@ -21,7 +21,7 @@ const useStyle = makeStyles((theme) => createStyles({
         margin: '0 auto 30px'
     },
     heroContainer: {
-        background: `url(${bg}) center center / cover fixed`,
+        background: `url(${bg}) center center / cover`,
         // background: `url(${`https://arlo-static-demo.netlify.app/static/40a019176f85445c7910d98269bfbd0b/f3a00/bg-image-02.webp`}) center center / cover fixed`,
         height: '100%',
         width: '100%',
@@ -50,7 +50,7 @@ const Hero = () => {
                 <Particle />
             </Parallax> */}
             <Box sx={{ textAlign: 'center', position: 'relative', zIndex: '1000' }}>
-                <Zoom in='true'>
+                <Zoom in={true}>
                     <Box className={imgContainer}>
                         {/* <img style={{ width: '220px', height: '220px', borderRadius: '50%' }} src="https://mdibuhossain.web.app/img/hero3.jpg" alt="" /> */}
                     </Box>
