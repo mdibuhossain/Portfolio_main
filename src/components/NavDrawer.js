@@ -16,15 +16,25 @@ import {
 } from "react-router-dom";
 import { createStyles, makeStyles } from '@mui/styles';
 import { NavHashLink as Link } from 'react-router-hash-link';
+import { Divider } from '@mui/material';
 
 
-const drawerWidth = 250;
+const drawerWidth = 400;
 
 const useStyle = makeStyles((theme) => createStyles({
     menuIcon: {
         color: 'white'
     }
 }));
+
+const linkStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textDecoration: 'none',
+    color: 'inherit',
+    borderBottom: '0.75px solid rgba(200, 200, 200, 0.125)'
+}
 
 export default function NavDrawer() {
     const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -33,55 +43,40 @@ export default function NavDrawer() {
         setMobileOpen(!mobileOpen);
     };
 
-    const { menuIcon } = useStyle();
+    // const { menuIcon } = useStyle();
     const drawer = (
         <div >
-            {/* <Toolbar /> */}
+            <Toolbar />
             {/* <Divider /> */}
             <List>
                 <Link smooth={true}
                     to='top'
-                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}
+                    style={linkStyle}
                 >
                     <ListItem button>
-                        <ListItemIcon>
-                            <InboxIcon className={menuIcon} />
-                        </ListItemIcon>
                         <ListItemText primary="Hero" />
                     </ListItem>
                 </Link>
                 <Link smooth={true}
                     to='about'
-                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}
+                    style={linkStyle}
                 >
                     <ListItem button>
-                        <ListItemIcon>
-                            <InboxIcon className={menuIcon} />
-                        </ListItemIcon>
                         <ListItemText primary="About me" />
                     </ListItem>
                 </Link>
-                <Link smooth={true} to='portfolio' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
+                <Link smooth={true} to='portfolio' style={linkStyle}>
                     <ListItem button>
-                        <ListItemIcon>
-                            <InboxIcon className={menuIcon} />
-                        </ListItemIcon>
                         <ListItemText primary="Portfolio" />
                     </ListItem>
                 </Link>
-                {/* <Link smooth={true} to='blogs' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
+                {/* <Link smooth={true} to='blogs' style={linkStyle}>
                     <ListItem button>
-                        <ListItemIcon>
-                            <InboxIcon className={menuIcon} />
-                        </ListItemIcon>
                         <ListItemText primary="Blogs" />
                     </ListItem>
                 </Link> */}
-                <Link smooth={true} to='contact' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
+                <Link smooth={true} to='contact' style={linkStyle}>
                     <ListItem button>
-                        <ListItemIcon>
-                            <InboxIcon className={menuIcon} />
-                        </ListItemIcon>
                         <ListItemText primary="Contact me" />
                     </ListItem>
                 </Link>
@@ -127,9 +122,8 @@ export default function NavDrawer() {
                     PaperProps={{
                         sx: {
                             position: 'relative',
-                            // backgroundColor: 'rgb(17, 17, 17)',
-                            backgroundColor: 'rgb(44, 50, 53)',
-                            opacity: '1',
+                            backgroundColor: 'rgb(17, 17, 17)',
+                            px: 5,
                             // color: 'white'
                         }
                     }}
@@ -138,17 +132,16 @@ export default function NavDrawer() {
                         '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
                     }}
                 >
-                    <div style={{ position: 'absolute', top: '0', left: '0', right: '0', bottom: '0', backgroundColor: 'rgba(10, 10, 10,0.2)', filter: 'blur(3px)', zIndex: '-1' }}></div>
+                    <div style={{ position: 'absolute', top: '0', left: '0', right: '0', bottom: '0', backgroundColor: 'rgba(17, 17, 17, 1)', filter: 'blur(3px)', zIndex: '-1' }}></div>
                     {drawer}
                 </Drawer>
                 <Drawer
                     variant="permanent"
                     PaperProps={{
                         sx: {
-                            // position: 'relative',
-                            // backgroundColor: 'black',
-                            backgroundColor: 'rgb(44, 50, 53)',
+                            backgroundColor: 'rgba(17, 17, 17, 1)',
                             opacity: '1',
+                            px: 5,
                             color: 'white'
                         }
                     }}

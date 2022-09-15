@@ -22,13 +22,22 @@ const useStyle = makeStyles((theme) => createStyles({
     },
     heroContainer: {
         background: `url(${bg}) center center / cover fixed`,
+        // background: `url(${`https://arlo-static-demo.netlify.app/static/40a019176f85445c7910d98269bfbd0b/f3a00/bg-image-02.webp`}) center center / cover fixed`,
         height: '100%',
         width: '100%',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         position: 'relative',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        '&::before': {
+            content: '',
+            position: 'absolute',
+            zIndex: '1000',
+            height: '100vh',
+            width: '100vw',
+            backgroundColor: 'red'
+        }
     }
 }));
 
@@ -37,9 +46,9 @@ const Hero = () => {
     return (
         <Box id="top" className={heroContainer}>
             <PageTitle title="Home" />
-            <Parallax>
+            {/* <Parallax>
                 <Particle />
-            </Parallax>
+            </Parallax> */}
             <Box sx={{ textAlign: 'center', position: 'relative', zIndex: '1000' }}>
                 <Zoom in='true'>
                     <Box className={imgContainer}>
@@ -52,7 +61,7 @@ const Hero = () => {
                 <Typography variant="h6" sx={{ fontWeight: 500, color: 'white' }}>
                     I'm a {' '}
                     <Typical
-                        steps={['Web developer', 2000, 'React developer ⚛️', 1000]}
+                        steps={['Web developer', 2000, 'React developer ⚛️', 800]}
                         loop={Infinity}
                         wrapper="span"
                     />
