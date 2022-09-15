@@ -19,7 +19,7 @@ import { NavHashLink as Link } from 'react-router-hash-link';
 import { Divider, Typography } from '@mui/material';
 
 
-const drawerWidth = 400;
+const drawerWidth = 300;
 
 const useStyle = makeStyles((theme) => createStyles({
     menuIcon: {
@@ -33,15 +33,29 @@ const useStyle = makeStyles((theme) => createStyles({
     linkInnerStyle: {
         width: '100%',
         padding: '15px 0',
+        position: 'relative',
+        display: 'inline-block',
         fontWeight: '300 !important',
         letterSpacing: '5px !important',
+        transition: 'all 0.225s ease-in-out',
         borderBottom: '0.75px solid rgba(200, 200, 200, 0.125)',
-        transition: '0.225s ease-in-out',
+        '&::after': {
+            content: '""',
+            position: 'absolute',
+            display: 'block',
+            height: '1px',
+            width: '0%',
+            bottom: '0',
+            backgroundColor: 'rgb(132, 193, 255)',
+            transition: 'all 0.325s ease-in-out'
+        },
+        '&:hover:after': {
+            width: '100%',
+        },
         '&:hover': {
             fontWeight: '300',
             color: 'rgb(132, 193, 255) !important',
-            borderBottom: '0.75px solid rgb(132, 193, 255)',
-        },
+        }
     }
 }));
 
