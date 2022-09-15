@@ -2,13 +2,10 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
+import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import {
@@ -16,7 +13,7 @@ import {
 } from "react-router-dom";
 import { createStyles, makeStyles } from '@mui/styles';
 import { NavHashLink as Link } from 'react-router-hash-link';
-import { Divider, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 
 
 const drawerWidth = 300;
@@ -78,7 +75,7 @@ export default function NavDrawer() {
                     className={linkStyle}
                 >
                     {/* <ListItem button> */}
-                    <Typography className={linkInnerStyle}>Hero</Typography>
+                    <Typography onClick={handleDrawerToggle} className={linkInnerStyle}>Hero</Typography>
                     {/* </ListItem> */}
                 </Link>
                 <Link smooth={true}
@@ -86,22 +83,22 @@ export default function NavDrawer() {
                     className={linkStyle}
                 >
                     {/* <ListItem button> */}
-                    <Typography className={linkInnerStyle}>About me</Typography>
+                    <Typography onClick={handleDrawerToggle} className={linkInnerStyle}>About me</Typography>
                     {/* </ListItem> */}
                 </Link>
                 <Link smooth={true} to='portfolio' className={linkStyle}>
                     {/* <ListItem button> */}
-                    <Typography className={linkInnerStyle}>Portfolio</Typography>
+                    <Typography onClick={handleDrawerToggle} className={linkInnerStyle}>Portfolio</Typography>
                     {/* </ListItem> */}
                 </Link>
                 {/* <Link smooth={true} to='blogs' className={linkStyle}>
                     // <ListItem button>
-                        <Typography className={linkInnerStyle}>Blogs</Typography>
+                        <Typography onClick={handleDrawerToggle} className={linkInnerStyle}>Blogs</Typography>
                     // </ListItem>
                 </Link> */}
                 <Link smooth={true} to='contact' className={linkStyle}>
                     {/* <ListItem button> */}
-                    <Typography className={linkInnerStyle}>Contact me</Typography>
+                    <Typography onClick={handleDrawerToggle} className={linkInnerStyle}>Contact me</Typography>
                     {/* </ListItem> */}
                 </Link>
             </List>
@@ -136,13 +133,11 @@ export default function NavDrawer() {
                 sx={{ width: { lg: drawerWidth }, flexShrink: { lg: 0 } }}
             >
                 {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-                <Drawer
+                <SwipeableDrawer
                     variant="temporary"
                     open={mobileOpen}
                     onClose={handleDrawerToggle}
-                    ModalProps={{
-                        keepMounted: true, // Better open performance on mobile.
-                    }}
+                    onOpen={handleDrawerToggle}
                     PaperProps={{
                         sx: {
                             position: 'relative',
@@ -158,7 +153,7 @@ export default function NavDrawer() {
                 >
                     <div style={{ position: 'absolute', top: '0', left: '0', right: '0', bottom: '0', backgroundColor: 'rgba(17, 17, 17, 1)', filter: 'blur(3px)', zIndex: '-1' }}></div>
                     {drawer}
-                </Drawer>
+                </SwipeableDrawer>
                 <Drawer
                     variant="permanent"
                     PaperProps={{
