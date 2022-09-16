@@ -159,6 +159,9 @@ export default function NavDrawer() {
                     open={mobileOpen}
                     onClose={handleDrawerToggle}
                     onOpen={handleDrawerToggle}
+                    ModalProps={{
+                        keepMounted: false,
+                    }}
                     PaperProps={{
                         sx: {
                             position: 'relative',

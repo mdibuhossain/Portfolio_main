@@ -24,9 +24,9 @@
             "MongoDB"
         ],
         "images": [
-            "/images/project/graphixshop/1.png",
-            "/images/project/graphixshop/2.png",
-            "/images/project/graphixshop/3.png"
+            "/images/project/graphixshop/1.jpg",
+            "/images/project/graphixshop/2.jpg",
+            "/images/project/graphixshop/3.jpg"
         ],
         "features": [
             "This is a simple niche graphic card selling website where users can purchase any product from this site.",
@@ -64,15 +64,15 @@
             "MongoDB"
         ],
         "images": [
-            "/images/project/fitnessCloud/1.png",
-            "/images/project/fitnessCloud/2.png",
-            "/images/project/fitnessCloud/3.png",
-            "/images/project/fitnessCloud/4.png",
-            "/images/project/fitnessCloud/5.png",
-            "/images/project/fitnessCloud/6.png",
-            "/images/project/fitnessCloud/7.png",
-            "/images/project/fitnessCloud/8.png",
-            "/images/project/fitnessCloud/9.png"
+            "/images/project/fitnessCloud/1.jpg",
+            "/images/project/fitnessCloud/2.jpg",
+            "/images/project/fitnessCloud/3.jpg",
+            "/images/project/fitnessCloud/4.jpg",
+            "/images/project/fitnessCloud/5.jpg",
+            "/images/project/fitnessCloud/6.jpg",
+            "/images/project/fitnessCloud/7.jpg",
+            "/images/project/fitnessCloud/8.jpg",
+            "/images/project/fitnessCloud/9.jpg"
         ],
         "features": [
             "This is a simple Gym club website where users can enroll any courses from this site.",
@@ -108,12 +108,12 @@
             "MongoDB"
         ],
         "images": [
-            "/images/project/travelPagla/1.png",
-            "/images/project/travelPagla/2.png",
-            "/images/project/travelPagla/3.png",
-            "/images/project/travelPagla/4.png",
-            "/images/project/travelPagla/5.png",
-            "/images/project/travelPagla/6.png"
+            "/images/project/travelPagla/1.jpg",
+            "/images/project/travelPagla/2.jpg",
+            "/images/project/travelPagla/3.jpg",
+            "/images/project/travelPagla/4.jpg",
+            "/images/project/travelPagla/5.jpg",
+            "/images/project/travelPagla/6.jpg"
         ],
         "features": [
             "coming soon"
@@ -141,9 +141,9 @@
             "Firebase auth"
         ],
         "images": [
-            "/images/project/worldtrip/1.png",
-            "/images/project/worldtrip/2.png",
-            "/images/project/worldtrip/3.png"
+            "/images/project/worldtrip/1.jpg",
+            "/images/project/worldtrip/2.jpg",
+            "/images/project/worldtrip/3.jpg"
         ],
         "features": [
             "It is a simple tourism website where users can add tour package to the cart.",
@@ -176,10 +176,10 @@
             "Firebase auth"
         ],
         "images": [
-            "/images/project/lifeDentalCare/1.png",
-            "/images/project/lifeDentalCare/2.png",
-            "/images/project/lifeDentalCare/3.png",
-            "/images/project/lifeDentalCare/4.png"
+            "/images/project/lifeDentalCare/1.jpg",
+            "/images/project/lifeDentalCare/2.jpg",
+            "/images/project/lifeDentalCare/3.jpg",
+            "/images/project/lifeDentalCare/4.jpg"
         ],
         "features": [
             "A simple dental clinic website where users can buy medical accessories and take various dental treatments.",
@@ -210,10 +210,10 @@
             "ReactJS"
         ],
         "images": [
-            "/images/project/devCourse/1.png",
-            "/images/project/devCourse/2.png",
-            "/images/project/devCourse/3.png",
-            "/images/project/devCourse/4.png"
+            "/images/project/devCourse/1.jpg",
+            "/images/project/devCourse/2.jpg",
+            "/images/project/devCourse/3.jpg",
+            "/images/project/devCourse/4.jpg"
         ],
         "features": [
             "A simple educational website where users can enroll in different types of courses."
