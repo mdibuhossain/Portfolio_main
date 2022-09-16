@@ -12,6 +12,7 @@ import About from './Pages/About';
 // import Blogs from './Pages/Blogs';
 import ProjectDetails from './components/ProjectDetails';
 import NotFound from './Pages/NotFound';
+import Blogs from './Pages/Blogs';
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
             <Route path='/portfolio' element={<Portfolio />} />
             <Route path='/portfolio/:id' element={<ProjectDetails />} />
             <Route path='/contact' element={<Contact />} />
-            {/* <Route path='/blogs' element={<Blogs />} /> */}
+            <Route path='/blogs' element={<Blogs />} />
             <Route path='*' element={<NotFound />} />
           </Route>
         </Routes>

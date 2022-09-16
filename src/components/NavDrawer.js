@@ -12,8 +12,10 @@ import {
     Outlet
 } from "react-router-dom";
 import { createStyles, makeStyles } from '@mui/styles';
-import { NavHashLink as Link } from 'react-router-hash-link';
+import { NavHashLink } from 'react-router-hash-link';
 import { Typography } from '@mui/material';
+import { NavLink as Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 const drawerWidth = 400;
@@ -22,15 +24,31 @@ const useStyle = makeStyles((theme) => createStyles({
     menuIcon: {
         color: 'white'
     },
-    linkStyle: {
-        display: 'flex',
+    activeLinkInnerStyle: {
+        width: '100%',
+        padding: '15px 0',
+        position: 'relative',
         textDecoration: 'none',
-        color: 'inherit',
+        display: 'inline-block',
+        fontWeight: '300 !important',
+        letterSpacing: '5px !important',
+        color: 'rgb(132, 193, 255) !important',
+        borderBottom: '0.75px solid rgba(200, 200, 200, 0.125)',
+        '&::after': {
+            content: '""',
+            position: 'absolute',
+            display: 'block',
+            height: '1px',
+            width: '100%',
+            bottom: '0',
+            backgroundColor: 'rgb(132, 193, 255)'
+        },
     },
     linkInnerStyle: {
         width: '100%',
         padding: '15px 0',
         position: 'relative',
+        textDecoration: 'none',
         display: 'inline-block',
         fontWeight: '300 !important',
         letterSpacing: '5px !important',
@@ -56,7 +74,6 @@ const useStyle = makeStyles((theme) => createStyles({
     }
 }));
 
-
 export default function NavDrawer() {
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -64,52 +81,46 @@ export default function NavDrawer() {
         setMobileOpen(!mobileOpen);
     };
 
-    const { linkInnerStyle, linkStyle } = useStyle();
+    const { linkInnerStyle, activeLinkInnerStyle } = useStyle();
     const drawer = (
         <div >
             <Toolbar />
             {/* <Divider /> */}
             <List>
-                <Link smooth={true}
+                <NavLink
                     to='top'
-                    className={linkStyle}
+                    onClick={handleDrawerToggle}
+                    className={({ isActive }) => (isActive ? activeLinkInnerStyle : linkInnerStyle)}
                 >
-                    {/* <ListItem button> */}
-                    <Typography onClick={handleDrawerToggle} className={linkInnerStyle}>Hero</Typography>
-                    {/* </ListItem> */}
-                </Link>
-                <Link smooth={true}
+                    Hero
+                </NavLink>
+                <Link
                     to='about'
-                    className={linkStyle}
+                    className={({ isActive }) => (isActive ? activeLinkInnerStyle : linkInnerStyle)}
+                    onClick={handleDrawerToggle}
                 >
-                    {/* <ListItem button> */}
-                    <Typography onClick={handleDrawerToggle} className={linkInnerStyle}>About me</Typography>
-                    {/* </ListItem> */}
+                    About me
                 </Link>
-                <Link smooth={true}
+                <Link
                     to='portfolio'
-                    className={linkStyle}
+                    onClick={handleDrawerToggle}
+                    className={({ isActive }) => (isActive ? activeLinkInnerStyle : linkInnerStyle)}
                 >
-                    {/* <ListItem button> */}
-                    <Typography onClick={handleDrawerToggle} className={linkInnerStyle}>Portfolio</Typography>
-                    {/* </ListItem> */}
+                    Portfolio
                 </Link>
-                {/* <Link
-                 smooth={true}
-                  to='blogs' 
-                  className={linkStyle}
-                  >
-                    // <ListItem button>
-                        <Typography onClick={handleDrawerToggle} className={linkInnerStyle}>Blogs</Typography>
-                    // </ListItem>
-                </Link> */}
-                <Link smooth={true}
-                    to='contact'
-                    className={linkStyle}
+                <Link
+                    to='blogs'
+                    onClick={handleDrawerToggle}
+                    className={({ isActive }) => (isActive ? activeLinkInnerStyle : linkInnerStyle)}
                 >
-                    {/* <ListItem button> */}
-                    <Typography onClick={handleDrawerToggle} className={linkInnerStyle}>Contact me</Typography>
-                    {/* </ListItem> */}
+                    Blogs
+                </Link>
+                <Link
+                    to='contact'
+                    onClick={handleDrawerToggle}
+                    className={({ isActive }) => (isActive ? activeLinkInnerStyle : linkInnerStyle)}
+                >
+                    Contact me
                 </Link>
             </List>
             {/* <Divider /> */}

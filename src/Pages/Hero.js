@@ -22,7 +22,6 @@ const useStyle = makeStyles((theme) => createStyles({
     },
     heroContainer: {
         background: `url(${bg}) center center / cover`,
-        // background: `url(${`https://arlo-static-demo.netlify.app/static/40a019176f85445c7910d98269bfbd0b/f3a00/bg-image-02.webp`}) center center / cover fixed`,
         height: '100%',
         width: '100%',
         display: 'flex',
