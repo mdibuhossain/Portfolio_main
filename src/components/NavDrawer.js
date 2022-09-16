@@ -77,8 +77,8 @@ const useStyle = makeStyles((theme) => createStyles({
 export default function NavDrawer() {
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
-    const handleDrawerToggle = () => {
-        setMobileOpen(!mobileOpen);
+    const handleDrawerToggle = (flag) => {
+        setMobileOpen(flag);
     };
 
     const { linkInnerStyle, activeLinkInnerStyle } = useStyle();
@@ -89,7 +89,7 @@ export default function NavDrawer() {
             <List>
                 <NavLink
                     to='top'
-                    onClick={handleDrawerToggle}
+                    onClick={() => handleDrawerToggle(false)}
                     className={({ isActive }) => (isActive ? activeLinkInnerStyle : linkInnerStyle)}
                 >
                     Hero
@@ -97,27 +97,27 @@ export default function NavDrawer() {
                 <Link
                     to='about'
                     className={({ isActive }) => (isActive ? activeLinkInnerStyle : linkInnerStyle)}
-                    onClick={handleDrawerToggle}
+                    onClick={() => handleDrawerToggle(false)}
                 >
                     About me
                 </Link>
                 <Link
                     to='portfolio'
-                    onClick={handleDrawerToggle}
+                    onClick={() => handleDrawerToggle(false)}
                     className={({ isActive }) => (isActive ? activeLinkInnerStyle : linkInnerStyle)}
                 >
                     Portfolio
                 </Link>
                 <Link
                     to='blogs'
-                    onClick={handleDrawerToggle}
+                    onClick={() => handleDrawerToggle(false)}
                     className={({ isActive }) => (isActive ? activeLinkInnerStyle : linkInnerStyle)}
                 >
                     Blogs
                 </Link>
                 <Link
                     to='contact'
-                    onClick={handleDrawerToggle}
+                    onClick={() => handleDrawerToggle(false)}
                     className={({ isActive }) => (isActive ? activeLinkInnerStyle : linkInnerStyle)}
                 >
                     Contact me
@@ -137,12 +137,13 @@ export default function NavDrawer() {
                     ml: { lg: `${drawerWidth}px` },
                 }}
             >
+                {/* Hamburger menu */}
                 <Toolbar sx={{ display: { lg: 'none' } }} >
                     <IconButton
                         // color="inherit"
                         aria-label="open drawer"
                         // edge="start"
-                        onClick={handleDrawerToggle}
+                        onClick={() => handleDrawerToggle(true)}
                         sx={{ ml: 'auto', display: { lg: 'none' } }}
                     >
                         <MenuIcon />
@@ -157,10 +158,10 @@ export default function NavDrawer() {
                 <SwipeableDrawer
                     variant="temporary"
                     open={mobileOpen}
-                    onClose={handleDrawerToggle}
-                    onOpen={handleDrawerToggle}
+                    onClose={() => handleDrawerToggle(false)}
+                    onOpen={() => handleDrawerToggle(true)}
                     ModalProps={{
-                        keepMounted: false,
+                        keepMounted: true,
                     }}
                     PaperProps={{
                         sx: {
