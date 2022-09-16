@@ -1,11 +1,11 @@
 [
     {
         "id": 1,
-        "name": "graphiXshop",
+        "name": "TravelPagla",
         "sites": {
-            "live": "https://graphix-shop.web.app/",
-            "client": "https://github.com/mdibuhossain/graphiXshop-client-site",
-            "server": "https://github.com/mdibuhossain/graphiXshop-server-site"
+            "live": "https://travel-pagla.web.app/",
+            "client": "https://github.com/mdibuhossain/travel-agency-endgame-client-site",
+            "server": "https://github.com/mdibuhossain/travel-agency-endgame-server-site"
         },
         "categories": [
             "NodeJS",
@@ -16,29 +16,73 @@
             "HTML",
             "CSS3",
             "JavaScript",
-            "Material UI",
+            "Tailwind CSS",
             "ReactJS",
+            "React Slick",
             "Firebase auth",
             "Heroku",
             "NodeJS",
             "MongoDB"
         ],
         "images": [
-            "/images/project/graphixshop/1.jpg",
-            "/images/project/graphixshop/2.jpg",
-            "/images/project/graphixshop/3.jpg"
+            "/images/project/travelPagla/1.jpg",
+            "/images/project/travelPagla/2.jpg",
+            "/images/project/travelPagla/3.jpg",
+            "/images/project/travelPagla/4.jpg",
+            "/images/project/travelPagla/5.jpg",
+            "/images/project/travelPagla/6.jpg"
         ],
         "features": [
-            "This is a simple niche graphic card selling website where users can purchase any product from this site.",
-            "Users can visit the website pages without reloading.",
-            "can register and log in with email and password, authenticated by firebase.",
-            "can update their name and photo.",
-            "can order any product and also able to cancel any order of their wish.",
-            "Only an admin of this website is able to add a new product, delete any product, and manage orders."
+            "coming soon"
         ]
     },
     {
         "id": 2,
+        "name": "CampusLib",
+        "sites": {
+            "live": "https://campuslb.web.app/",
+            "client": "https://github.com/mdibuhossain/campuslib-web",
+            "server": "https://github.com/mdibuhossain/CampusLib-server-site"
+        },
+        "server": "",
+        "categories": [
+            "JavaScript",
+            "ReactJS",
+            "Firebase",
+            "NodeJS"
+        ],
+        "technology": [
+            "HTML",
+            "CSS3",
+            "tailwindcss",
+            "Material UI",
+            "JavaScript",
+            "ReactJS",
+            "Firebase auth",
+            "Heroku",
+            "NodeJS",
+            "ExpressJS",
+            "MongoDB"
+        ],
+        "images": [
+            "/images/project/campusLib/1.jpg",
+            "/images/project/campusLib/2.jpg",
+            "/images/project/campusLib/3.jpg",
+            "/images/project/campusLib/4.jpg",
+            "/images/project/campusLib/5.jpg",
+            "/images/project/campusLib/6.jpg"
+        ],
+        "features": [
+            "A simple educational website where users can find books",
+            "Everyone can share their own resources",
+            "That requires registered account which is available",
+            "Only admin can approve, edit and delete the uploaded contents",
+            "Admin can make other users' as admin",
+            "Every book is categorized"
+        ]
+    },
+    {
+        "id": 3,
         "name": "FitnessCloud",
         "sites": {
             "live": "https://fitness-ui.web.app/",
@@ -83,12 +127,12 @@
         "team_project": false
     },
     {
-        "id": 6,
-        "name": "TravelPagla",
+        "id": 4,
+        "name": "graphiXshop",
         "sites": {
-            "live": "https://travel-pagla.web.app/",
-            "client": "https://github.com/mdibuhossain/travel-agency-endgame-client-site",
-            "server": "https://github.com/mdibuhossain/travel-agency-endgame-server-site"
+            "live": "https://graphix-shop.web.app/",
+            "client": "https://github.com/mdibuhossain/graphiXshop-client-site",
+            "server": "https://github.com/mdibuhossain/graphiXshop-server-site"
         },
         "categories": [
             "NodeJS",
@@ -99,61 +143,29 @@
             "HTML",
             "CSS3",
             "JavaScript",
-            "Tailwind CSS",
+            "Material UI",
             "ReactJS",
-            "React Slick",
             "Firebase auth",
             "Heroku",
             "NodeJS",
             "MongoDB"
         ],
         "images": [
-            "/images/project/travelPagla/1.jpg",
-            "/images/project/travelPagla/2.jpg",
-            "/images/project/travelPagla/3.jpg",
-            "/images/project/travelPagla/4.jpg",
-            "/images/project/travelPagla/5.jpg",
-            "/images/project/travelPagla/6.jpg"
+            "/images/project/graphixshop/1.jpg",
+            "/images/project/graphixshop/2.jpg",
+            "/images/project/graphixshop/3.jpg"
         ],
         "features": [
-            "coming soon"
+            "This is a simple niche graphic card selling website where users can purchase any product from this site.",
+            "Users can visit the website pages without reloading.",
+            "can register and log in with email and password, authenticated by firebase.",
+            "can update their name and photo.",
+            "can order any product and also able to cancel any order of their wish.",
+            "Only an admin of this website is able to add a new product, delete any product, and manage orders."
         ]
     },
     {
-        "id": 3,
-        "name": "WorldTrip",
-        "sites": {
-            "live": "https://world-trip.web.app/",
-            "client": "https://github.com/mdibuhossain/WorldTrip-Client-site",
-            "server": "https://github.com/mdibuhossain/WorldTrip-Server-site"
-        },
-        "categories": [
-            "NodeJS",
-            "ReactJS",
-            "JavaScript"
-        ],
-        "technology": [
-            "HTML",
-            "CSS3",
-            "JavaScript",
-            "Tailwind CSS",
-            "ReactJS",
-            "Firebase auth"
-        ],
-        "images": [
-            "/images/project/worldtrip/1.jpg",
-            "/images/project/worldtrip/2.jpg",
-            "/images/project/worldtrip/3.jpg"
-        ],
-        "features": [
-            "It is a simple tourism website where users can add tour package to the cart.",
-            "User can register and log in with Google, Facebook, and email which was authenticated by Firebase.",
-            "Users is able to add a new service, and manage orders.",
-            "Technology: HTML, Tailwind CSS, React.js, Firebase, Heroku, NodeJS, MongoDB"
-        ]
-    },
-    {
-        "id": 4,
+        "id": 5,
         "name": "Life Dental Care",
         "sites": {
             "live": "https://life-dental-care.web.app/",
@@ -188,7 +200,7 @@
         ]
     },
     {
-        "id": 5,
+        "id": 6,
         "name": "DevCourse",
         "sites": {
             "live": "https://devcourse.netlify.app/",
