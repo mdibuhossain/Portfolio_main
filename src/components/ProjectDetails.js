@@ -1,16 +1,19 @@
-import { Button, Chip, Grid, Typography } from '@mui/material';
+import { Button, Chip, Grid, IconButton, Typography } from '@mui/material';
 import { createStyles, makeStyles } from '@mui/styles';
+import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Flip from 'react-reveal/Flip';
 import Title from './Title';
+import { Background } from 'react-parallax';
 
 const ProjectDetails = () => {
     const { id } = useParams();
     const [totalProduct, setTotalProduct] = useState([]);
     const [product, setProduct] = useState({});
     const [currentImg, setCurrentImg] = useState('');
+    const navigate = useNavigate();
     useEffect(() => {
         fetch('/projectData.json')
             .then(res => res.json())
@@ -37,11 +40,14 @@ const ProjectDetails = () => {
             zIndex: '10',
             width: '100%',
             transition: '1s ease-in-out'
-        }
+        },
     }));
-    const { currentImgStyle } = useStyle();
+    const { currentImgStyle, } = useStyle();
     return (
         <Box className="container" sx={{ pt: { lg: 5, xs: 7 }, px: { lg: 7, xs: 4 } }}>
+            <IconButton onClick={() => navigate(-1)}>
+                <ArrowCircleLeftIcon fontSize='large' />
+            </IconButton>
             <Title
                 title={product?.name}
                 subtitle="PROJECT"
@@ -109,7 +115,7 @@ const ProjectDetails = () => {
                     </Grid>
                 </Grid>
             </Box>
-        </Box>
+        </Box >
     );
 };
 

@@ -11,7 +11,7 @@ const Product = (props) => {
     const { name, images, categories, sites, id, team_project } = props.product;
     const navigate = useNavigate();
     const visitProject = (id) => {
-        navigate(`/portfolio/${id}`);
+        navigate(`/${id}`);
     }
 
 
