@@ -4,7 +4,7 @@ import Typical from 'react-typical';
 import { Box } from '@mui/system';
 import { createStyles, Typography, Zoom } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import bg from '../images/bg2.png';
+// import bg from '../images/bg2.png';
 import hero from '../images/hero.jpg';
 // import { Parallax } from 'react-parallax';
 import PageTitle from '../components/PageTitle';
@@ -13,9 +13,10 @@ const useStyle = makeStyles((theme) => createStyles({
     imgContainer: {
         width: '200px',
         height: '200px',
-        borderRadius: '50%',
+        borderRadius: '5%',
         background: `url(${hero}) center center / cover`,
-        boxShadow: '1px 1px 20px rgba(32, 193, 255, 0.5)',
+        boxShadow: '1.5px 1.5px 15px rgba(183, 229, 255, 0.6)',
+        backgroundSize: '122%',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',

@@ -3,7 +3,6 @@ import { createStyles, makeStyles } from '@mui/styles';
 import { Box } from '@mui/system';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Zoom from 'react-reveal/Zoom'
 
 const previewHeight = '200px';
 
@@ -50,7 +49,7 @@ const Product = (props) => {
     return (
         <>
             <Grid item xs={12} md={4}>
-                <Zoom>
+                <>
                     <Box className={imgContainer}>
                         <Box onClick={() => visitProject(id)} className={showProduct}>
                             <img className={projectImg} src={images[0]} alt="" />
@@ -83,7 +82,7 @@ const Product = (props) => {
                             </Box>
                         </Box>
                     </Box>
-                </Zoom>
+                </>
             </Grid>
         </>
     );

@@ -4,7 +4,6 @@ import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import Flip from 'react-reveal/Flip';
 import Title from './Title';
 
 const ProjectDetails = () => {
@@ -66,9 +65,7 @@ const ProjectDetails = () => {
                                     return (
                                         <Grid item xs={2} key={index}>
                                             <Box onClick={() => currentImgHandler(img)} sx={{ height: '60px', overflow: 'hidden' }}>
-                                                <Flip left>
-                                                    <img style={{ width: '100%' }} src={img} alt="" />
-                                                </Flip>
+                                                <img style={{ width: '100%' }} src={img} alt="" />
                                             </Box>
                                         </Grid>
                                     )
