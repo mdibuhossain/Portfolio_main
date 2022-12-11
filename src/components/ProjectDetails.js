@@ -6,7 +6,6 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Flip from 'react-reveal/Flip';
 import Title from './Title';
-import { Background } from 'react-parallax';
 
 const ProjectDetails = () => {
     const { id } = useParams();
