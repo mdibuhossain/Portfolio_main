@@ -15,13 +15,15 @@ const useStyle = makeStyles((theme) => createStyles({
         height: '200px',
         borderRadius: '50%',
         background: `url(${hero}) center center / cover`,
+        boxShadow: '1px 1px 20px rgba(32, 193, 255, 0.5)',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         margin: '0 auto 30px'
     },
     heroContainer: {
-        background: `url(${bg}) center center / cover`,
+        // background: `url(${bg}) center center / cover`,
+        background: 'black',
         height: '100%',
         width: '100%',
         display: 'flex',

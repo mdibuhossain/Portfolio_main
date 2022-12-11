@@ -104,7 +104,7 @@ const ProjectDetails = () => {
                                     return (
                                         <span key={site}>
                                             {
-                                                product?.sites[site] && <Button variant="contained" sx={{ mr: 2 }}><a style={{ color: 'inherit', textDecoration: 'none' }} href={product?.sites[site]} target="_blank" rel="noopener noreferrer">{site}</a></Button>
+                                                product?.sites[site] && <a style={{ color: 'inherit', textDecoration: 'none' }} href={product?.sites[site]} target="_blank" rel="noopener noreferrer"> <Button variant="contained" sx={{ mr: 2 }}>{site}</Button></a>
                                             }
                                         </span>
                                     )

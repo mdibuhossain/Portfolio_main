@@ -9,7 +9,7 @@ const Contact = () => {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm('gmail', 'template_cxyg5rq', e.target, 'user_DIPj6sgA5NCMk4G4DKpkz')
+        emailjs.sendForm(`${process.env.EMAILJS_SERVICE_ID}`, `${process.env.EMAILJS_TAMP_ID}`, e.target, `${process.env.EMAILJS_TAMP_ID}`)
             .then((result) => {
                 console.log(result.text);
                 e.target.reset();

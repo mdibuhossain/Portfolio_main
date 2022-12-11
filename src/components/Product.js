@@ -74,7 +74,7 @@ const Product = (props) => {
                                         return (
                                             <span key={site}>
                                                 {
-                                                    sites[site] && <Button variant="text"><a style={{ color: 'inherit', textDecoration: 'none' }} href={sites[site]} target="_blank" rel="noopener noreferrer">{site}</a></Button>
+                                                    sites[site] && <a style={{ color: 'inherit', textDecoration: 'none' }} href={sites[site]} target="_blank" rel="noopener noreferrer"><Button variant="text">{site}</Button></a>
                                                 }
                                             </span>
                                         )
