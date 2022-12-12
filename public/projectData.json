@@ -1,11 +1,11 @@
 [
     {
         "id": 1,
-        "name": "TravelPagla",
+        "name": "TravelWala",
         "sites": {
-            "live": "https://travel-pagla.web.app/",
-            "client": "https://github.com/mdibuhossain/travel-agency-endgame-client-site",
-            "server": "https://github.com/mdibuhossain/travel-agency-endgame-server-site"
+            "live": "https://travelwala.web.app/",
+            "client": "https://github.com/mdibuhossain/travelWala-client-site",
+            "server": "https://github.com/mdibuhossain/travelWala-server-site"
         },
         "categories": [
             "NodeJS",
@@ -25,12 +25,12 @@
             "MongoDB"
         ],
         "images": [
-            "/images/project/travelPagla/1.jpg",
-            "/images/project/travelPagla/2.jpg",
-            "/images/project/travelPagla/3.jpg",
-            "/images/project/travelPagla/4.jpg",
-            "/images/project/travelPagla/5.jpg",
-            "/images/project/travelPagla/6.jpg"
+            "/images/project/travelWala/1.jpg",
+            "/images/project/travelWala/2.jpg",
+            "/images/project/travelWala/3.jpg",
+            "/images/project/travelWala/4.jpg",
+            "/images/project/travelWala/5.jpg",
+            "/images/project/travelWala/6.jpg"
         ],
         "features": [
             "coming soon"
