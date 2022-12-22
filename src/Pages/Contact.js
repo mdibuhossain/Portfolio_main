@@ -25,7 +25,7 @@ const Contact = () => {
                 subtitle="CONTACT"
             />
             <form onSubmit={sendEmail} className="contactUniversalContainer">
-                <Container sx={{ width: 'calc(100vw - 20vw)' }}>
+                <Container>
                     <Grid sx={{ width: '100%' }} container spacing={{ md: 3 }}>
                         <Grid className="contactContainer" item xs={12} md={6}>
                             <Typography>
