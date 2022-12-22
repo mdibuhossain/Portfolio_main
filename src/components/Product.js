@@ -4,7 +4,7 @@ import { Box } from '@mui/system';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const previewHeight = '200px';
+const previewHeight = '150px';
 
 const Product = (props) => {
     const { name, images, categories, sites, id, team_project } = props.product;
@@ -62,7 +62,7 @@ const Product = (props) => {
                                 {
                                     categories.map(tag => {
                                         return (
-                                            <Chip key={tag} sx={{ mr: 1, my: 1 }} label={tag} variant="outlined" onClick={handleClick} />
+                                            <Chip size="small" key={tag} sx={{ mr: 1, my: 1 }} label={tag} variant="outlined" onClick={handleClick} />
                                         )
                                     })
                                 }
@@ -73,7 +73,7 @@ const Product = (props) => {
                                         return (
                                             <span key={site}>
                                                 {
-                                                    sites[site] && <a style={{ color: 'inherit', textDecoration: 'none' }} href={sites[site]} target="_blank" rel="noopener noreferrer"><Button variant="text">{site}</Button></a>
+                                                    sites[site] && <a style={{ color: 'inherit', textDecoration: 'none' }} href={sites[site]} target="_blank" rel="noopener noreferrer"><Button variant="text" size="small">{site}</Button></a>
                                                 }
                                             </span>
                                         )
