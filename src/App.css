@@ -27,7 +27,7 @@ html, body{
   padding-bottom: 50px;
   position: relative;
   z-index: 100;
-  background-color: rgba(0, 0, 0, 1);
+  background-color: rgba(10, 11, 10, 1);
   /* overflow: hidden */
 }
 

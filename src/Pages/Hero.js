@@ -24,7 +24,7 @@ const useStyle = makeStyles((theme) => createStyles({
     },
     heroContainer: {
         // background: `url(${bg}) center center / cover`,
-        background: 'black',
+        background: 'rgba(10, 11, 10, 1)',
         height: '100%',
         width: '100%',
         display: 'flex',
