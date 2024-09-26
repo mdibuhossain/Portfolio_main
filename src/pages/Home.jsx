@@ -11,7 +11,7 @@ const Home = () => {
         />
         <meta
           name="keywords"
-          content="ibrahim, hossain, full-stack, web, development"
+          content="ibrahim, hossain, full-stack, web, development, mdibuhossain, ibrahim hossain, ibrahim hossain web developer, ibrahim hossain full-stack developer"
         />
       </Helmet>
       <main>
