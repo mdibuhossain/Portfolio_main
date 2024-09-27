@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { skill_data } from "../data/skill_data";
 import "./about.css";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const About = () => {
   const skillsName = Object.keys(skill_data);
@@ -13,12 +13,13 @@ const About = () => {
         <title>Ibrahim Hossain | About me</title>
         <meta
           name="description"
-          content="I'm Ibrahim Hossain, a full-stack Web Developer."
+          content="Everything about Md. Ibrahim Hossain, a full-stack web developer. Explore my projects and skills."
         />
         <meta
           name="keywords"
           content="ibrahim, hossain, full-stack, web, development, about me, Bangladeshi, CSE, ReactJS, MaterialUI, Bootstrap, Tailwind, Vanilla CSS"
         />
+        <link rel="canonical" href="https://ibrahim.engineer/about" />
       </Helmet>
       <main>
         <h1 className="position-absolute top-0 end-0 mt-4 me-4 d-block d-sm-none top-page-title">

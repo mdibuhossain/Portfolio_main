@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import "./contact.css";
 
 const Contact = () => {
@@ -8,12 +8,13 @@ const Contact = () => {
         <title>Ibrahim Hossain | Contact with me</title>
         <meta
           name="description"
-          content="I'm Ibrahim Hossain, a full-stack Web Developer."
+          content="Contact with Md. Ibrahim Hossain, a full-stack web developer. Explore my projects and skills."
         />
         <meta
           name="keywords"
           content="ibrahim, hossain, full-stack, web, development, contact, email, social, coding profile, address"
         />
+        <link rel="canonical" href="https://ibrahim.engineer/contact" />
       </Helmet>
       <h1 className="position-absolute top-0 end-0 mt-4 me-4 d-block d-sm-none top-page-title">
         GET IN <span>TOUCH</span>

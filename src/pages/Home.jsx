@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   return (
@@ -7,12 +7,13 @@ const Home = () => {
         <title>Ibrahim Hossain | Full-stack Developer</title>
         <meta
           name="description"
-          content="I'm Ibrahim Hossain, a full-stack Web Developer."
+          content="Md. Ibrahim Hossain - Frontend Developer with expertise in JavaScript, React, and Node.js. Explore my projects and skills."
         />
         <meta
           name="keywords"
-          content="ibrahim, hossain, full-stack, web, development, mdibuhossain, ibrahim hossain, ibrahim hossain web developer, ibrahim hossain full-stack developer"
+          content="Ibrahim Hossain, frontend developer, JavaScript projects, React projects, Node.js projects, web developer, portfolio"
         />
+        <link rel="canonical" href="https://ibrahim.engineer/" />
       </Helmet>
       <main>
         <section className="container-fluid home-container">

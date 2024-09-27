@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { project_data } from "../data/project_data";
 import "./projects.css";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const Projects = () => {
   const portfoliosName = Object.keys(project_data);
@@ -18,12 +18,13 @@ const Projects = () => {
         <title>Ibrahim Hossain | Projects</title>
         <meta
           name="description"
-          content="I'm Ibrahim Hossain, a full-stack Web Developer."
+          content="Various projects by Md. Ibrahim Hossain, a full-stack web developer. Explore my projects and skills."
         />
         <meta
           name="keywords"
-          content="ibrahim, hossain, full-stack, web, development, projects, portfolio, reactjs, materialui, bootstrap, tailwind, vanilla css, campus library, fitnesscloud, life dental care, travelwala, weather app, portfolio website, encryptstore, e-ticket service"
+          content="full-stack, web, development, projects, portfolio, web developer, ReactJS, Node.js, MongoDB, ExpressJS, JavaScript, HTML, CSS, Firebase, GraphQL, Redux, MySQL, JavaFX, Java, spring boot, CRUD, responsive, website, web app"
         />
+        <link rel="canonical" href="https://ibrahim.engineer/projects" />
       </Helmet>
       <main>
         <h1 className="position-absolute top-0 end-0 mt-4 me-4 d-block d-sm-none top-page-title">
