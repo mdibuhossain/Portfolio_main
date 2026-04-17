@@ -1,0 +1,28 @@
+---
+import SectionLabel from "~/components/SectionLabel.astro";
+import ProjectCard from "~/components/ProjectCard.astro";
+import { getCollection } from "astro:content";
+
+const projects = (await getCollection("projects"))
+  .filter((p) => p.data.featured)
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<SectionLabel index="03" label="Selected work / recent projects" anchor="work" />
+
+<section class="relative">
+  <div class="container-x">
+    <div class="grid gap-6 md:gap-8 md:grid-cols-2">
+      {projects.map((p, i) => <ProjectCard project={p} index={i} />)}
+    </div>
+
+    <div class="mt-12 flex items-center justify-between">
+      <p class="font-mono text-[0.7rem] uppercase tracking-[0.22em]" style="color: var(--muted);">
+        Selected from ongoing work &amp; studies.
+      </p>
+      <a href="/projects" class="link-underline font-mono text-[0.72rem] uppercase tracking-[0.22em]" style="color: var(--fg);">
+        All projects &rarr;
+      </a>
+    </div>
+  </div>
+</section>

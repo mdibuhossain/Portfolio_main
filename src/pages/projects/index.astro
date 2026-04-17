@@ -1,0 +1,29 @@
+---
+import Base from "~/layouts/Base.astro";
+import ProjectCard from "~/components/ProjectCard.astro";
+import { getCollection } from "astro:content";
+
+const projects = (await getCollection("projects")).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Base title="All projects" description="A complete list of projects by Md. Ibrahim Hossain.">
+  <section class="pt-16 md:pt-24">
+    <div class="container-x">
+      <div class="flex items-center gap-4 mb-8">
+        <a href="/" class="font-mono text-[0.72rem] uppercase tracking-[0.22em]" style="color: var(--muted);">
+          &larr; Back
+        </a>
+        <span class="hairline flex-1"></span>
+        <span class="eyebrow">Index &middot; {projects.length} {projects.length === 1 ? "project" : "projects"}</span>
+      </div>
+
+      <h1 class="display text-[clamp(3rem,10vw,8rem)] mb-12" style="color: var(--fg);">
+        Every <span class="display-italic" style="color: var(--accent);">thing</span> I&rsquo;ve built.
+      </h1>
+
+      <div class="grid gap-6 md:gap-8 md:grid-cols-2">
+        {projects.map((p, i) => <ProjectCard project={p} index={i} />)}
+      </div>
+    </div>
+  </section>
+</Base>

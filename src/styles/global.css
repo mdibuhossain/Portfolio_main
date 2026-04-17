@@ -1,0 +1,334 @@
+@import "tailwindcss";
+
+/* Fonts are loaded via <link> tags in Base.astro */
+
+/* --- Theme tokens ------------------------------------------------------- */
+
+:root {
+  --bg: #0f0e0d;
+  --bg-elev: #181614;
+  --bg-soft: #13110f;
+  --fg: #ece6d8;
+  --fg-soft: #c6bfb0;
+  --muted: #8a8277;
+  --line: #2a2622;
+  --line-soft: #1f1c19;
+  --accent: #ff4a1c;
+  --accent-soft: #ffd7a8;
+  --accent-ink: #0f0e0d;
+  --highlight: #f9e6b7;
+
+  --font-display: "Fraunces", "Times New Roman", serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+
+  --max: 1440px;
+  --gutter: clamp(1rem, 4vw, 3.5rem);
+
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --bg: #f4efe2;
+  --bg-elev: #ffffff;
+  --bg-soft: #ebe5d5;
+  --fg: #171109;
+  --fg-soft: #3b3227;
+  --muted: #7a6e5c;
+  --line: #d8d0bc;
+  --line-soft: #e5deca;
+  --accent: #c93a0e;
+  --accent-soft: #fcc79a;
+  --accent-ink: #fff8ec;
+  --highlight: #f7c774;
+
+  color-scheme: light;
+}
+
+@theme {
+  --color-bg: var(--bg);
+  --color-bg-elev: var(--bg-elev);
+  --color-bg-soft: var(--bg-soft);
+  --color-fg: var(--fg);
+  --color-fg-soft: var(--fg-soft);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-line-soft: var(--line-soft);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-ink: var(--accent-ink);
+  --color-highlight: var(--highlight);
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+/* --- Base --------------------------------------------------------------- */
+
+* {
+  border-color: var(--line);
+}
+
+html {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "ss02", "cv11";
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100dvh;
+  background:
+    radial-gradient(900px 600px at 85% -10%, color-mix(in oklab, var(--accent) 14%, transparent), transparent 60%),
+    radial-gradient(700px 500px at -5% 15%, color-mix(in oklab, var(--highlight) 10%, transparent), transparent 60%),
+    var(--bg);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* Grid noise overlay for atmosphere */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.38 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  opacity: 0.16;
+  mix-blend-mode: overlay;
+}
+
+/* Section rulers */
+.hairline {
+  height: 1px;
+  background: var(--line);
+}
+
+/* Utility: oversized display heading */
+.display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-variation-settings: "SOFT" 50, "WONK" 0;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 0.92;
+}
+
+.display-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-variation-settings: "SOFT" 100, "WONK" 1;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1px;
+  background: currentColor;
+  transform-origin: right center;
+  transform: scaleX(1);
+  transition: transform 0.5s cubic-bezier(0.6, 0.05, 0.2, 1);
+}
+.link-underline:hover::after {
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+
+/* --- Marquee ------------------------------------------------------------ */
+
+@keyframes marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+.marquee:hover { animation-play-state: paused; }
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reveal { animation: slide-up 0.9s cubic-bezier(0.2, 0.6, 0.2, 1) both; }
+
+@keyframes blink {
+  0%, 60% { opacity: 1; }
+  61%, 100% { opacity: 0.3; }
+}
+.blink { animation: blink 1.6s steps(1) infinite; }
+
+/* --- Button ------------------------------------------------------------- */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.35rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0 0 color-mix(in oklab, var(--accent) 40%, transparent);
+  will-change: transform;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px -12px color-mix(in oklab, var(--accent) 60%, transparent);
+}
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.35rem;
+  background: transparent;
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.btn-ghost:hover {
+  background: var(--bg-elev);
+  border-color: var(--fg-soft);
+}
+
+/* --- Card --------------------------------------------------------------- */
+
+.card {
+  position: relative;
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  transition: transform 0.45s cubic-bezier(0.2, 0.6, 0.2, 1), border-color 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in oklab, var(--accent) 60%, var(--line));
+}
+
+/* --- Container --------------------------------------------------------- */
+
+.container-x {
+  width: 100%;
+  max-width: var(--max);
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+  margin-inline: auto;
+}
+
+/* --- Prose (project pages) --------------------------------------------- */
+
+.prose-editorial {
+  max-width: 68ch;
+  color: var(--fg-soft);
+  font-size: 1.075rem;
+  line-height: 1.75;
+}
+.prose-editorial h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--fg);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+.prose-editorial h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  color: var(--fg);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.prose-editorial p { margin-bottom: 1.1rem; }
+.prose-editorial ul { list-style: none; padding-left: 0; margin-bottom: 1.5rem; }
+.prose-editorial ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+.prose-editorial ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+}
+.prose-editorial strong { color: var(--fg); font-weight: 600; }
+.prose-editorial code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: var(--bg-soft);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+}
+.prose-editorial a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+/* --- Pop-in on scroll --------------------------------------------------- */
+
+.in-view {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s cubic-bezier(0.2, 0.6, 0.2, 1), transform 0.9s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+.in-view.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Scroll bar (subtle) ------------------------------------------------ */
+html::-webkit-scrollbar { width: 10px; height: 10px; }
+html::-webkit-scrollbar-track { background: var(--bg); }
+html::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 999px;
+  border: 2px solid var(--bg);
+}
+html::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+  .marquee { animation: none !important; }
+}

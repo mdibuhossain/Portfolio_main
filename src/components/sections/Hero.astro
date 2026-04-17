@@ -1,0 +1,110 @@
+---
+import { getEntry } from "astro:content";
+const site = await getEntry("site", "site");
+const cfg = site!.data;
+
+const availabilityLabel = {
+  available: "Available for new work",
+  booked: "Currently booked",
+  "open-to-chat": "Open to a conversation",
+}[cfg.availability.status];
+
+const now = new Date();
+const timeStr = new Intl.DateTimeFormat("en-GB", {
+  hour: "2-digit",
+  minute: "2-digit",
+  timeZone: "Asia/Dhaka",
+  hour12: false,
+}).format(now);
+---
+
+<section class="relative overflow-hidden pt-16 md:pt-24">
+  <div class="container-x grid grid-cols-12 gap-x-6 gap-y-10">
+    <!-- status row -->
+    <div class="col-span-12 flex flex-wrap items-center justify-between gap-4 reveal">
+      <div class="flex items-center gap-3 font-mono text-[0.72rem] uppercase tracking-[0.22em]" style="color: var(--muted);">
+        <span class="h-1.5 w-1.5 rounded-full blink" style="background: var(--accent);"></span>
+        <span>{availabilityLabel}</span>
+      </div>
+      <div class="hidden md:flex items-center gap-6 font-mono text-[0.72rem] uppercase tracking-[0.22em]" style="color: var(--muted);">
+        <span>Dhaka &middot; GMT+6</span>
+        <span>{timeStr} local</span>
+      </div>
+    </div>
+
+    <!-- title block -->
+    <div class="col-span-12 md:col-span-10 reveal" style="animation-delay: .15s;">
+      <h1
+        class="display text-[clamp(3.25rem,11vw,11rem)]"
+        style="color: var(--fg);"
+      >
+        Md. Ibrahim
+        <span class="block">
+          <span class="display-italic" style="color: var(--accent);">Hossain</span><span style="color: var(--accent);">.</span>
+        </span>
+      </h1>
+    </div>
+
+    <!-- right-side callout -->
+    <aside class="col-span-12 md:col-span-2 md:pt-6 reveal" style="animation-delay: .25s;">
+      <div class="md:border-l md:pl-4" style="border-color: var(--line);">
+        <p class="eyebrow mb-2">Est.</p>
+        <p class="font-display text-3xl" style="color: var(--fg);">2020</p>
+        <p class="mt-4 font-mono text-[0.7rem] uppercase tracking-[0.2em]" style="color: var(--muted);">
+          Writing software professionally since 2025 &mdash; building side-projects well before that.
+        </p>
+      </div>
+    </aside>
+
+    <!-- role + tagline + CTA -->
+    <div class="col-span-12 md:col-span-7 md:col-start-1 reveal" style="animation-delay: .35s;">
+      <p class="font-mono text-sm uppercase tracking-[0.22em] mb-6" style="color: var(--accent);">
+        &lsquo;&mdash; {cfg.role} &mdash; based in {cfg.location}
+      </p>
+      <p class="font-display text-[clamp(1.3rem,2.3vw,1.75rem)] leading-snug max-w-[34ch]" style="color: var(--fg-soft);">
+        {cfg.tagline}
+      </p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a class="btn-primary" href="#work">
+          See selected work
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+            <path d="M5 1V9M5 9L1 5M5 9L9 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+          </svg>
+        </a>
+        <a class="btn-ghost" href={`mailto:${cfg.email}`}>
+          Email me
+        </a>
+      </div>
+    </div>
+
+    <!-- availability card -->
+    <aside class="col-span-12 md:col-span-4 md:col-start-9 reveal self-end" style="animation-delay: .45s;">
+      <div class="card p-6 md:p-7">
+        <div class="flex items-center justify-between">
+          <span class="eyebrow">Availability</span>
+          <span class="font-mono text-[0.68rem] px-2 py-1 rounded-full" style="background: color-mix(in oklab, var(--accent) 15%, transparent); color: var(--accent);">
+            &#x2022; {cfg.availability.status === "available" ? "OPEN" : cfg.availability.status === "booked" ? "BOOKED" : "CHATTING"}
+          </span>
+        </div>
+        <p class="mt-4 font-display text-xl leading-snug" style="color: var(--fg);">
+          {cfg.availability.message}
+        </p>
+        <div class="mt-5 pt-5 border-t flex items-center justify-between" style="border-color: var(--line);">
+          <span class="font-mono text-[0.7rem] uppercase tracking-[0.2em]" style="color: var(--muted);">Currently</span>
+          <span class="font-mono text-sm" style="color: var(--fg);">@ Zepto Apps</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- scroll cue -->
+  <div class="container-x mt-24 md:mt-32 flex items-end justify-between gap-4 reveal" style="animation-delay: .55s;">
+    <span class="font-mono text-[0.7rem] uppercase tracking-[0.22em]" style="color: var(--muted);">
+      Scroll <span class="mx-1">&darr;</span> you&rsquo;re in the right place
+    </span>
+    <div class="hidden md:flex items-center gap-3">
+      <span class="font-mono text-[0.7rem] uppercase tracking-[0.22em]" style="color: var(--muted);">01&mdash;05</span>
+      <span class="hairline w-20"></span>
+    </div>
+  </div>
+</section>

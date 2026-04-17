@@ -1,0 +1,37 @@
+---
+// Large, soft follow-cursor glow — hidden on touch / reduced-motion.
+---
+<div
+  id="cursor-glow"
+  aria-hidden="true"
+  class="pointer-events-none fixed -left-[400px] -top-[400px] z-0 h-[560px] w-[560px] rounded-full opacity-0 blur-3xl transition-opacity duration-700"
+  style="background: radial-gradient(closest-side, color-mix(in oklab, var(--accent) 35%, transparent), transparent 70%);"
+>
+</div>
+
+<script is:inline>
+  function wireGlow() {
+    const el = document.getElementById("cursor-glow");
+    if (!el) return;
+    const media = matchMedia("(hover: hover) and (pointer: fine)");
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!media.matches || reduce) return;
+    let x = 0, y = 0, tx = 0, ty = 0;
+    let active = false;
+    const move = (e) => {
+      tx = e.clientX;
+      ty = e.clientY;
+      if (!active) { active = true; el.style.opacity = "1"; loop(); }
+    };
+    const loop = () => {
+      x += (tx - x) * 0.12;
+      y += (ty - y) * 0.12;
+      el.style.transform = `translate3d(${x - 280}px, ${y - 280}px, 0)`;
+      requestAnimationFrame(loop);
+    };
+    window.addEventListener("mousemove", move, { passive: true });
+    window.addEventListener("mouseleave", () => (el.style.opacity = "0"));
+  }
+  wireGlow();
+  document.addEventListener("astro:page-load", wireGlow);
+</script>

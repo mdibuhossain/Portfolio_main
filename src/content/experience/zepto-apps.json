@@ -1,0 +1,29 @@
+{
+  "company": "Zepto Apps",
+  "role": "Software Engineer",
+  "location": "Uttara, Dhaka, Bangladesh",
+  "url": "https://zeptoapps.com",
+  "startDate": "2025-02",
+  "endDate": null,
+  "current": true,
+  "summary": "Building and maintaining a live Shopify SaaS app that lets merchants sell highly customizable neon signs, plus the admin tools behind it.",
+  "highlights": [
+    "Built and maintain the frontend of Zepto Sign Customizer — a live Shopify app that lets merchants sell custom neon signs, available on the Shopify App Store.",
+    "Engineered a granular design customizer with per-character, per-word, and per-line color and font selection, significantly expanding creative options for end users.",
+    "Delivered responsive, accessible UI using Remix, Shopify Polaris, and Vanilla JS for a smooth experience across desktop and mobile storefronts.",
+    "Architected application state with Redux, managing complex cross-component data flow for the real-time design canvas.",
+    "Contributed to the merchant admin dashboard — order tracking, customization previews, and platform monitoring.",
+    "Worked across the stack regularly: bug fixes, debugging, and code reviews in Laravel / PHP / MySQL."
+  ],
+  "stack": [
+    "Remix",
+    "React",
+    "Redux",
+    "Shopify Polaris",
+    "Vanilla JS",
+    "Laravel",
+    "PHP",
+    "MySQL"
+  ],
+  "order": 1
+}

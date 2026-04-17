@@ -1,0 +1,74 @@
+---
+import SectionLabel from "~/components/SectionLabel.astro";
+import { getCollection } from "astro:content";
+import { formatRange } from "~/utils/formatDate";
+
+const experience = (await getCollection("experience")).sort((a, b) => b.data.order - a.data.order);
+---
+
+<SectionLabel index="02" label="Experience / where I've been" anchor="experience" />
+
+<section class="relative">
+  <div class="container-x">
+    <ul class="space-y-10 md:space-y-16">
+      {experience.map((job) => (
+        <li class="grid grid-cols-12 gap-x-6 gap-y-4 in-view">
+          <div class="col-span-12 md:col-span-3">
+            <p class="font-mono text-xs uppercase tracking-[0.22em]" style="color: var(--muted);">
+              {formatRange(job.data.startDate, job.data.endDate)}
+            </p>
+            <p class="mt-2 font-mono text-[0.7rem] uppercase tracking-[0.2em]" style="color: var(--fg-soft);">
+              {job.data.location}
+            </p>
+            {job.data.current && (
+              <span class="mt-3 inline-flex items-center gap-2 font-mono text-[0.68rem] px-2 py-1 rounded-full" style="background: color-mix(in oklab, var(--accent) 15%, transparent); color: var(--accent);">
+                <span class="h-1.5 w-1.5 rounded-full blink" style="background: var(--accent);"></span>
+                CURRENT
+              </span>
+            )}
+          </div>
+
+          <div class="col-span-12 md:col-span-9 md:pl-8 md:border-l" style="border-color: var(--line);">
+            <div class="flex flex-wrap items-baseline justify-between gap-3">
+              <h3 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] leading-[1.1]" style="color: var(--fg);">
+                {job.data.role}
+                <span class="display-italic" style="color: var(--muted);"> &mdash; </span>
+                {job.data.url ? (
+                  <a href={job.data.url} target="_blank" rel="noopener" class="link-underline" style="color: var(--accent);">
+                    {job.data.company}
+                  </a>
+                ) : (
+                  <span style="color: var(--accent);">{job.data.company}</span>
+                )}
+              </h3>
+            </div>
+
+            <p class="mt-4 max-w-[60ch] text-lg leading-relaxed" style="color: var(--fg-soft);">
+              {job.data.summary}
+            </p>
+
+            <ul class="mt-6 space-y-3 max-w-[68ch]">
+              {job.data.highlights.map((h) => (
+                <li class="relative pl-6 text-[0.98rem] leading-relaxed" style="color: var(--fg-soft);">
+                  <span class="absolute left-0 top-[0.65em] h-[1px] w-3" style="background: var(--accent);"></span>
+                  {h}
+                </li>
+              ))}
+            </ul>
+
+            <ul class="mt-6 flex flex-wrap gap-2">
+              {job.data.stack.map((s) => (
+                <li
+                  class="font-mono text-[0.7rem] uppercase tracking-widest px-3 py-1 rounded-full border"
+                  style="color: var(--fg-soft); border-color: var(--line);"
+                >
+                  {s}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

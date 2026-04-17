@@ -1,0 +1,54 @@
+---
+import { getEntry } from "astro:content";
+const site = await getEntry("site", "site");
+const cfg = site!.data;
+const year = new Date().getFullYear();
+---
+
+<footer class="relative z-10 mt-32 border-t" style="border-color: var(--line-soft); background: var(--bg-soft);">
+  <div class="container-x py-16">
+    <div class="grid gap-10 md:grid-cols-12 items-end">
+      <div class="md:col-span-7">
+        <p class="eyebrow mb-4">Footer / contact again</p>
+        <h2 class="display text-[clamp(2.5rem,6vw,5.5rem)]" style="color: var(--fg);">
+          Let&rsquo;s <span class="display-italic" style="color: var(--accent);">build</span> something
+        </h2>
+        <a
+          href={`mailto:${cfg.email}`}
+          class="mt-6 inline-flex items-center gap-3 font-mono text-sm"
+          style="color: var(--fg-soft);"
+        >
+          <span class="h-1.5 w-1.5 rounded-full" style="background: var(--accent);"></span>
+          {cfg.email}
+          <svg width="12" height="12" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+            <path d="M1 9L9 1M9 1H2.5M9 1V7.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="md:col-span-5">
+        <p class="eyebrow mb-4">Elsewhere</p>
+        <ul class="space-y-3">
+          {cfg.socials.map((s) => (
+            <li class="flex items-center justify-between border-b pb-2" style="border-color: var(--line-soft);">
+              <span class="font-mono text-xs uppercase tracking-widest" style="color: var(--muted);">{s.label}</span>
+              <a href={s.url} target={s.url.startsWith("mailto:") ? undefined : "_blank"} rel="noopener" class="link-underline text-sm" style="color: var(--fg);">
+                {s.handle}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-14 pt-6 border-t flex flex-wrap items-center justify-between gap-4" style="border-color: var(--line-soft);">
+      <p class="font-mono text-xs" style="color: var(--muted);">
+        &copy; {year} {cfg.name}
+      </p>
+      <p class="font-mono text-xs" style="color: var(--muted);">
+        <span class="inline-block h-1.5 w-1.5 rounded-full mr-2 align-middle blink" style="background: var(--accent);"></span>
+        {cfg.location}
+      </p>
+    </div>
+  </div>
+</footer>

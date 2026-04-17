@@ -1,0 +1,77 @@
+---
+import SectionLabel from "~/components/SectionLabel.astro";
+import Marquee from "~/components/Marquee.astro";
+import { getEntry } from "astro:content";
+
+const site = await getEntry("site", "site");
+const cfg = site!.data;
+
+const marqueeItems = [
+  "React",
+  "Remix",
+  "Node.js",
+  "TypeScript",
+  "Laravel",
+  "Shopify",
+  "Redux",
+  "Tailwind",
+  "MongoDB",
+  "GraphQL",
+  "Astro",
+  "Firebase",
+];
+---
+
+<SectionLabel index="01" label="About / a short introduction" anchor="about" />
+
+<section class="relative">
+  <div class="container-x grid grid-cols-12 gap-x-6 gap-y-10">
+    <div class="col-span-12 md:col-span-8 in-view">
+      <p class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] leading-[1.25]" style="color: var(--fg);">
+        {cfg.bio.long}
+      </p>
+    </div>
+
+    {cfg.bio.pullQuote && (
+      <aside class="col-span-12 md:col-span-4 md:pt-24 in-view" style="transition-delay: .1s;">
+        <figure
+          class="relative p-6 md:p-7 rounded-2xl"
+          style="background: color-mix(in oklab, var(--accent) 12%, transparent); border: 1px solid color-mix(in oklab, var(--accent) 35%, var(--line));"
+        >
+          <span
+            aria-hidden="true"
+            class="absolute -top-5 left-5 font-display text-7xl leading-none"
+            style="color: var(--accent);"
+          >
+            &ldquo;
+          </span>
+          <blockquote class="font-display italic text-xl leading-snug pl-4" style="color: var(--fg);">
+            {cfg.bio.pullQuote}
+          </blockquote>
+          <figcaption class="mt-4 pl-4 font-mono text-[0.7rem] uppercase tracking-[0.2em]" style="color: var(--muted);">
+            &mdash; on the work that matters
+          </figcaption>
+        </figure>
+      </aside>
+    )}
+
+    <div class="col-span-12 md:col-span-8 mt-4 flex flex-wrap gap-x-10 gap-y-6 in-view" style="transition-delay: .15s;">
+      <div>
+        <p class="eyebrow">Based in</p>
+        <p class="mt-1 font-display text-xl" style="color: var(--fg);">{cfg.location}</p>
+      </div>
+      <div>
+        <p class="eyebrow">Currently</p>
+        <p class="mt-1 font-display text-xl" style="color: var(--fg);">Software Engineer @ Zepto Apps</p>
+      </div>
+      <div>
+        <p class="eyebrow">Also into</p>
+        <p class="mt-1 font-display text-xl" style="color: var(--fg);">Competitive programming, design systems, weekend prototypes.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-20 border-y py-2" style="border-color: var(--line-soft); background: color-mix(in oklab, var(--bg-elev) 60%, transparent);">
+    <Marquee items={marqueeItems} separator="/" />
+  </div>
+</section>

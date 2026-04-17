@@ -1,0 +1,14 @@
+---
+interface Props {
+  index: string;
+  label: string;
+  anchor?: string;
+}
+const { index, label, anchor } = Astro.props;
+---
+
+<div id={anchor} class="container-x flex items-baseline gap-4 pt-24 md:pt-32 pb-10 in-view">
+  <span class="font-mono text-xs tracking-[0.22em]" style="color: var(--accent);">{index}</span>
+  <span class="hairline flex-1"></span>
+  <span class="eyebrow">{label}</span>
+</div>

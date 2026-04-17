@@ -1,0 +1,40 @@
+{
+  "site": {
+    "name": "Md. Ibrahim Hossain",
+    "role": "Software Engineer",
+    "tagline": "Full-stack engineer crafting fast, accessible interfaces and the systems behind them.",
+    "location": "Dhaka, Bangladesh",
+    "email": "ibuhossain3@gmail.com",
+    "phone": "+8801518455043",
+    "availability": {
+      "status": "open-to-chat",
+      "message": "Open to product work, frontend-leaning roles, and interesting collaborations."
+    },
+    "bio": {
+      "short": "I build products at the intersection of thoughtful UI and solid engineering — currently shipping Shopify apps at Zepto Apps.",
+      "long": "I'm a software engineer based in Dhaka. I spend most of my time in the React / Remix / Node neighbourhood, and I enjoy the work that sits between design and infrastructure — the part where a real product actually has to feel good to use. Lately I've been building merchant tooling for Shopify, including a live app that lets retailers sell custom neon signs with per-character design controls.",
+      "pullQuote": "The interesting problems are usually the ones where design, UX, and state management all have opinions at the same time."
+    },
+    "socials": [
+      { "label": "GitHub", "handle": "@mdibuhossain", "url": "https://github.com/mdibuhossain" },
+      { "label": "LinkedIn", "handle": "in/mdibuhossain", "url": "https://www.linkedin.com/in/mdibuhossain/" },
+      { "label": "LeetCode", "handle": "@mdibuhossain", "url": "https://leetcode.com/u/mdibuhossain/" },
+      { "label": "Codeforces", "handle": "@mdibuhossain", "url": "https://codeforces.com/profile/mdibuhossain" },
+      { "label": "Email", "handle": "ibuhossain3@gmail.com", "url": "mailto:ibuhossain3@gmail.com" }
+    ],
+    "seo": {
+      "title": "Md. Ibrahim Hossain — Software Engineer",
+      "description": "Full-stack software engineer based in Dhaka, Bangladesh. Currently building Shopify apps at Zepto Apps. React, Remix, Node, Laravel.",
+      "keywords": [
+        "Md. Ibrahim Hossain",
+        "mdibuhossain",
+        "Software Engineer",
+        "Dhaka",
+        "Shopify Developer",
+        "React Developer",
+        "Remix",
+        "Full-stack"
+      ]
+    }
+  }
+}

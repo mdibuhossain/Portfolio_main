@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd /tmp)",
+      "Bash(python -c ' *)",
+      "Bash(pip install *)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(npx astro *)",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}

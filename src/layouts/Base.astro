@@ -1,0 +1,117 @@
+---
+import "~/styles/global.css";
+import Header from "~/components/Header.astro";
+import Footer from "~/components/Footer.astro";
+import CursorGlow from "~/components/CursorGlow.astro";
+import { getEntry } from "astro:content";
+import { ClientRouter } from "astro:transitions";
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  pathname?: string;
+}
+
+const site = await getEntry("site", "site");
+const cfg = site!.data;
+
+const {
+  title = cfg.seo.title,
+  description = cfg.seo.description,
+  ogImage,
+  pathname,
+} = Astro.props;
+
+const canonical = new URL(pathname ?? Astro.url.pathname, Astro.site ?? "https://mdibuhossain.web.app").toString();
+const resolvedTitle = title === cfg.seo.title ? title : `${title} — ${cfg.name}`;
+---
+
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
+
+    <title>{resolvedTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={cfg.seo.keywords.join(", ")} />
+    <meta name="author" content={cfg.name} />
+    <meta name="theme-color" content="#0f0e0d" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={resolvedTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={cfg.name} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={resolvedTitle} />
+    <meta name="twitter:description" content={description} />
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=JetBrains+Mono:wght@300;400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap"
+    />
+
+    <script is:inline>
+      // Theme initializer — runs before paint to avoid flash.
+      (function () {
+        try {
+          const saved = localStorage.getItem("theme");
+          const sys = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+          const theme = saved ?? sys;
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (_) { /* ignore */ }
+      })();
+    </script>
+
+    <ClientRouter />
+  </head>
+  <body>
+    <a href="#content" class="sr-only focus:not-sr-only fixed left-4 top-4 z-50 rounded-full bg-[var(--accent)] px-4 py-2 text-xs font-mono uppercase tracking-widest text-[var(--accent-ink)]">
+      Skip to content
+    </a>
+
+    <CursorGlow />
+    <Header />
+
+    <main id="content" class="relative z-10">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <script is:inline>
+      // Scroll-reveal observer + reinit on view transition.
+      function initReveal() {
+        const els = document.querySelectorAll(".in-view");
+        if (!("IntersectionObserver" in window)) {
+          els.forEach((el) => el.classList.add("is-visible"));
+          return;
+        }
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add("is-visible");
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { rootMargin: "0px 0px -10% 0px", threshold: 0.08 }
+        );
+        els.forEach((el) => io.observe(el));
+      }
+      initReveal();
+      document.addEventListener("astro:page-load", initReveal);
+    </script>
+  </body>
+</html>

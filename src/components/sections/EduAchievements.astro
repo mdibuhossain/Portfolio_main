@@ -1,0 +1,62 @@
+---
+import SectionLabel from "~/components/SectionLabel.astro";
+import { getCollection } from "astro:content";
+import { formatRange } from "~/utils/formatDate";
+
+const education = (await getCollection("education")).sort((a, b) => a.data.order - b.data.order);
+const achievements = (await getCollection("achievements")).sort((a, b) => a.data.order - b.data.order);
+---
+
+<SectionLabel index="05" label="Credentials / study & shelf" anchor="credentials" />
+
+<section class="relative">
+  <div class="container-x grid gap-10 md:gap-16 md:grid-cols-2">
+    <!-- Education -->
+    <div class="in-view">
+      <h3 class="eyebrow mb-6">Education</h3>
+      <ul class="space-y-8">
+        {education.map((e) => (
+          <li>
+            <p class="font-mono text-[0.72rem] uppercase tracking-[0.2em] mb-2" style="color: var(--muted);">
+              {formatRange(e.data.startDate, e.data.endDate)}
+            </p>
+            <h4 class="font-display text-[clamp(1.4rem,2.2vw,1.9rem)] leading-[1.15]" style="color: var(--fg);">
+              {e.data.degree} <span class="display-italic" style="color: var(--muted);"> in </span>
+              <span style="color: var(--accent);">{e.data.field}</span>
+            </h4>
+            <p class="mt-2 text-sm" style="color: var(--fg-soft);">
+              {e.data.institution} &middot; {e.data.location}
+            </p>
+            {e.data.note && (
+              <p class="mt-3 max-w-[52ch] text-[0.98rem] leading-relaxed" style="color: var(--fg-soft);">{e.data.note}</p>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Achievements -->
+    <div class="in-view" style="transition-delay: .1s;">
+      <h3 class="eyebrow mb-6">Recognition</h3>
+      <ul class="space-y-6">
+        {achievements.map((a) => (
+          <li class="card p-6">
+            <div class="flex items-center justify-between">
+              <p class="font-mono text-[0.72rem] uppercase tracking-[0.2em]" style="color: var(--accent);">
+                {a.data.year}
+              </p>
+              <p class="font-mono text-[0.7rem] uppercase tracking-[0.2em]" style="color: var(--muted);">
+                {a.data.issuer}
+              </p>
+            </div>
+            <h4 class="mt-3 font-display text-[clamp(1.3rem,2vw,1.75rem)] leading-[1.15]" style="color: var(--fg);">
+              {a.data.title}
+            </h4>
+            <p class="mt-2 text-sm" style="color: var(--fg-soft);">{a.data.event}</p>
+            <p class="mt-4 text-[0.98rem] leading-relaxed" style="color: var(--fg-soft);">{a.data.description}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,59 @@
+---
+import SectionLabel from "~/components/SectionLabel.astro";
+import { getEntry } from "astro:content";
+const site = await getEntry("site", "site");
+const cfg = site!.data;
+---
+
+<SectionLabel index="06" label="Contact / say hi" anchor="contact" />
+
+<section class="relative pb-20">
+  <div class="container-x grid gap-10 md:grid-cols-12">
+    <div class="md:col-span-8 in-view">
+      <h3 class="display text-[clamp(2.5rem,7vw,6rem)]" style="color: var(--fg);">
+        Got a thing you&rsquo;d like to <span class="display-italic" style="color: var(--accent);">build</span>?
+      </h3>
+      <p class="mt-6 max-w-[52ch] text-lg" style="color: var(--fg-soft);">
+        Whether it&rsquo;s a Shopify product, a web app you can&rsquo;t seem to finish, or a role at a team you&rsquo;re proud of &mdash; I&rsquo;d genuinely love to hear about it.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a class="btn-primary" href={`mailto:${cfg.email}`}>
+          {cfg.email}
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+            <path d="M1 9L9 1M9 1H2.5M9 1V7.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+          </svg>
+        </a>
+        <a class="btn-ghost" href={`tel:${cfg.phone.replace(/\s+/g, "")}`}>
+          {cfg.phone}
+        </a>
+      </div>
+    </div>
+
+    <aside class="md:col-span-4 md:pt-4 in-view" style="transition-delay: .1s;">
+      <div class="card p-6">
+        <p class="eyebrow mb-4">Also findable on</p>
+        <ul class="space-y-3">
+          {cfg.socials.filter((s) => s.label !== "Email").map((s) => (
+            <li>
+              <a
+                href={s.url}
+                target={s.url.startsWith("mailto:") ? undefined : "_blank"}
+                rel="noopener"
+                class="group flex items-center justify-between border-b py-2 transition-colors"
+                style="border-color: var(--line-soft);"
+              >
+                <span class="font-mono text-xs uppercase tracking-widest" style="color: var(--muted);">{s.label}</span>
+                <span class="flex items-center gap-2 font-mono text-sm transition-colors group-hover:text-[var(--accent)]" style="color: var(--fg);">
+                  {s.handle}
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                    <path d="M1 9L9 1M9 1H2.5M9 1V7.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                  </svg>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>

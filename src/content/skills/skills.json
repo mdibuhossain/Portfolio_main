@@ -1,0 +1,32 @@
+[
+  {
+    "id": "languages",
+    "category": "Languages",
+    "items": ["JavaScript", "TypeScript", "Java", "C", "C++", "HTML", "CSS", "PHP"],
+    "order": 1
+  },
+  {
+    "id": "frontend",
+    "category": "Frontend",
+    "items": ["React", "Remix", "Next.js", "Redux", "Astro", "Tailwind CSS", "Shopify Polaris"],
+    "order": 2
+  },
+  {
+    "id": "backend",
+    "category": "Backend",
+    "items": ["Node.js", "Express.js", "Laravel", "GraphQL"],
+    "order": 3
+  },
+  {
+    "id": "databases",
+    "category": "Databases",
+    "items": ["MongoDB", "MySQL", "PostgreSQL", "Firebase"],
+    "order": 4
+  },
+  {
+    "id": "tools",
+    "category": "Tools & Platforms",
+    "items": ["Git", "GitHub", "Shopify", "React Native", "Vercel", "Netlify"],
+    "order": 5
+  }
+]

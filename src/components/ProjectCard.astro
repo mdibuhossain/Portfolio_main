@@ -1,0 +1,82 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+  index: number;
+}
+const { project, index } = Astro.props;
+const p = project.data;
+const num = String(index + 1).padStart(2, "0");
+---
+
+<a
+  href={`/projects/${project.id}`}
+  class="card group block overflow-hidden in-view"
+  data-hover
+>
+  <div
+    class="relative aspect-[16/10] w-full overflow-hidden"
+    style={`background: linear-gradient(135deg, ${p.cover.from}, ${p.cover.to});`}
+  >
+    <!-- tile pattern overlay -->
+    <div
+      class="absolute inset-0 opacity-30 transition-opacity duration-500 group-hover:opacity-60"
+      style="background-image: radial-gradient(rgba(0,0,0,.2) 1px, transparent 1px); background-size: 22px 22px;"
+    ></div>
+
+    <!-- big wordmark -->
+    <div class="absolute inset-0 grid place-items-center">
+      <span
+        class="font-display text-[clamp(4rem,12vw,9rem)] leading-none"
+        style="color: rgba(255,255,255,.95); mix-blend-mode: overlay; letter-spacing: -0.04em;"
+      >
+        {p.cover.text}
+      </span>
+    </div>
+
+    <!-- status -->
+    <div class="absolute top-5 left-5 flex items-center gap-2 font-mono text-[0.68rem] uppercase tracking-[0.2em]" style="color: rgba(255,255,255,.95);">
+      <span class="h-1.5 w-1.5 rounded-full" style="background: rgba(255,255,255,.95);"></span>
+      {p.status === "live" ? "LIVE" : p.status === "wip" ? "IN PROGRESS" : "ARCHIVED"}
+    </div>
+
+    <!-- number -->
+    <div class="absolute top-5 right-5 font-mono text-[0.68rem] uppercase tracking-[0.2em]" style="color: rgba(255,255,255,.95);">
+      {num}
+    </div>
+
+    <!-- year -->
+    <div class="absolute bottom-5 right-5 font-display text-xl" style="color: rgba(255,255,255,.95);">
+      &rsquo;{p.year.slice(-2)}
+    </div>
+  </div>
+
+  <div class="p-6 md:p-8">
+    <div class="flex items-start justify-between gap-3">
+      <h3 class="font-display text-[clamp(1.5rem,2.5vw,2rem)] leading-[1.1]" style="color: var(--fg);">
+        {p.title}
+      </h3>
+      <span
+        class="mt-2 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-500 group-hover:bg-[var(--accent)] group-hover:border-[var(--accent)] group-hover:text-[var(--accent-ink)]"
+        style="border-color: var(--line); color: var(--fg-soft);"
+      >
+        <svg width="12" height="12" viewBox="0 0 10 10" fill="none" aria-hidden="true" class="transition-transform duration-500 group-hover:rotate-45">
+          <path d="M1 9L9 1M9 1H2.5M9 1V7.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+        </svg>
+      </span>
+    </div>
+    <p class="mt-3 text-[0.98rem] leading-relaxed" style="color: var(--fg-soft);">{p.tagline}</p>
+
+    <ul class="mt-5 flex flex-wrap gap-2">
+      {p.stack.slice(0, 5).map((s) => (
+        <li class="font-mono text-[0.68rem] uppercase tracking-widest px-2.5 py-1 rounded-full border" style="color: var(--muted); border-color: var(--line);">{s}</li>
+      ))}
+      {p.stack.length > 5 && (
+        <li class="font-mono text-[0.68rem] uppercase tracking-widest px-2.5 py-1" style="color: var(--muted);">
+          +{p.stack.length - 5}
+        </li>
+      )}
+    </ul>
+  </div>
+</a>

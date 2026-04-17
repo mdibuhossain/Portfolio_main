@@ -1,0 +1,21 @@
+---
+import Base from "~/layouts/Base.astro";
+---
+
+<Base title="404 — Not found" description="This page doesn't exist.">
+  <section class="container-x grid min-h-[70dvh] place-items-center py-24">
+    <div class="text-center">
+      <p class="eyebrow mb-6">404 / off the map</p>
+      <h1 class="display text-[clamp(4rem,15vw,12rem)]" style="color: var(--fg);">
+        Not <span class="display-italic" style="color: var(--accent);">here.</span>
+      </h1>
+      <p class="mt-6 max-w-[44ch] mx-auto text-lg" style="color: var(--fg-soft);">
+        The page you&rsquo;re looking for has wandered off, or never existed. Either way &mdash; let&rsquo;s get you home.
+      </p>
+      <div class="mt-10 flex items-center justify-center gap-3">
+        <a class="btn-primary" href="/">Back to home</a>
+        <a class="btn-ghost" href="/projects">See projects</a>
+      </div>
+    </div>
+  </section>
+</Base>
