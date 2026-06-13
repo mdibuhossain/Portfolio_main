@@ -2,13 +2,23 @@
   {
     "id": "languages",
     "category": "Languages",
-    "items": ["JavaScript", "TypeScript", "Java", "C", "C++", "HTML", "CSS", "PHP"],
+    "items": ["JavaScript", "TypeScript", "Java", "C", "C++", "PHP"],
     "order": 1
   },
   {
     "id": "frontend",
     "category": "Frontend",
-    "items": ["React", "Remix", "Next.js", "Redux", "Astro", "Tailwind CSS", "Shopify Polaris"],
+    "items": [
+      "HTML",
+      "CSS",
+      "React",
+      "React Native",
+      "Remix",
+      "Next.js",
+      "Redux",
+      "Astro",
+      "Tailwind CSS"
+    ],
     "order": 2
   },
   {
@@ -26,7 +36,7 @@
   {
     "id": "tools",
     "category": "Tools & Platforms",
-    "items": ["Git", "GitHub", "Shopify", "React Native", "Vercel", "Netlify"],
+    "items": ["Git", "GitHub"],
     "order": 5
   }
 ]

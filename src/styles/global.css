@@ -239,6 +239,62 @@ body::before {
   border-color: color-mix(in oklab, var(--accent) 60%, var(--line));
 }
 
+/* --- Skill card & pill -------------------------------------------------- */
+
+.skill-card-inner {
+  position: relative;
+  padding: 1.5rem;
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.45s cubic-bezier(0.2, 0.6, 0.2, 1), border-color 0.3s ease;
+}
+.skill-card-inner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+  right: 1.5rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.skill-card:hover .skill-card-inner {
+  transform: translateY(-4px);
+  border-color: color-mix(in oklab, var(--accent) 40%, var(--line));
+}
+.skill-card:hover .skill-card-inner::before {
+  opacity: 1;
+}
+.skill-index {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--line);
+}
+.skill-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.72rem;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  color: var(--fg-soft);
+  transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+  cursor: default;
+}
+.skill-pill:hover {
+  border-color: color-mix(in oklab, var(--accent) 60%, var(--line));
+  color: var(--fg);
+  background: color-mix(in oklab, var(--accent) 8%, var(--bg-soft));
+}
+
 /* --- Container --------------------------------------------------------- */
 
 .container-x {

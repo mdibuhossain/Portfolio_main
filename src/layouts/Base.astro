@@ -3,6 +3,7 @@ import "~/styles/global.css";
 import Header from "~/components/Header.astro";
 import Footer from "~/components/Footer.astro";
 import CursorGlow from "~/components/CursorGlow.astro";
+import CustomCursor from "~/components/CustomCursor.astro";
 import { getEntry } from "astro:content";
 import { ClientRouter } from "astro:transitions";
 
@@ -81,6 +82,7 @@ const resolvedTitle = title === cfg.seo.title ? title : `${title} — ${cfg.name
     </a>
 
     <CursorGlow />
+    <CustomCursor />
     <Header />
 
     <main id="content" class="relative z-10">

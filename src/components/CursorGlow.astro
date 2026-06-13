@@ -4,10 +4,23 @@
 <div
   id="cursor-glow"
   aria-hidden="true"
-  class="pointer-events-none fixed -left-[400px] -top-[400px] z-0 h-[560px] w-[560px] rounded-full opacity-0 blur-3xl transition-opacity duration-700"
-  style="background: radial-gradient(closest-side, color-mix(in oklab, var(--accent) 35%, transparent), transparent 70%);"
+  class="pointer-events-none fixed left-0 top-0 h-140 w-140 rounded-full opacity-0 blur-3xl transition-opacity duration-700"
+  style="background: radial-gradient(closest-side, color-mix(in oklab, var(--accent) 50%, transparent), transparent 70%);"
 >
 </div>
+
+<style is:global>
+  /* Dark mode: float above content and screen-blend so it glows through text/cards */
+  #cursor-glow {
+    z-index: 20;
+    mix-blend-mode: screen;
+  }
+  /* Light mode: screen on a light bg just washes out — sit behind content instead */
+  [data-theme="light"] #cursor-glow {
+    z-index: 0;
+    mix-blend-mode: normal;
+  }
+</style>
 
 <script is:inline>
   function wireGlow() {

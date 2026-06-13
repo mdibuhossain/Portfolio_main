@@ -1,0 +1,195 @@
+---
+// Custom cursor: instant dot + lagged morphing ring.
+// Disabled on touch / reduced-motion. Hides native cursor via CSS.
+---
+
+<div id="cc-dot"  aria-hidden="true"></div>
+<div id="cc-ring" aria-hidden="true">
+  <span id="cc-text"></span>
+</div>
+
+<style is:global>
+  /* ── native cursor off on true pointer devices ── */
+  @media (hover: hover) and (pointer: fine) {
+    html,
+    html a,
+    html button,
+    html label,
+    html input,
+    html textarea,
+    html select,
+    html [role="button"],
+    html [data-cursor] { cursor: none !important; }
+  }
+
+  /* ── base elements ── */
+  #cc-dot,
+  #cc-ring {
+    pointer-events: none;
+    position: fixed;
+    left: 0; top: 0;
+    border-radius: 9999px;
+    z-index: 9999;
+    opacity: 0;
+    will-change: transform;
+  }
+
+  #cc-dot {
+    width: 9px; height: 9px;
+    background: var(--accent);
+    box-shadow: 0 0 10px 2px color-mix(in oklab, var(--accent) 55%, transparent);
+    transition:
+      width  .25s cubic-bezier(.2,.6,.2,1),
+      height .25s cubic-bezier(.2,.6,.2,1),
+      box-shadow .3s ease,
+      opacity .4s ease;
+  }
+
+  #cc-ring {
+    width: 34px; height: 34px;
+    border: 2px solid color-mix(in oklab, var(--accent) 80%, transparent);
+    box-shadow:
+      0 0 0 0 transparent,
+      0 0 16px 2px color-mix(in oklab, var(--accent) 25%, transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+      width      .45s cubic-bezier(.2,.6,.2,1),
+      height     .45s cubic-bezier(.2,.6,.2,1),
+      background-color .35s ease,
+      border-color     .35s ease,
+      border-width     .3s ease,
+      box-shadow       .3s ease,
+      opacity    .4s ease;
+  }
+
+  #cc-text {
+    font-family: var(--font-mono);
+    font-size: .58rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    opacity: 0;
+    transition: opacity .2s ease;
+    white-space: nowrap;
+    user-select: none;
+  }
+
+  /* ── hover: link ── */
+  body.cc-link #cc-dot  { width: 3px; height: 3px; opacity: .5; box-shadow: none; }
+  body.cc-link #cc-ring {
+    width: 46px; height: 46px;
+    border-color: var(--accent);
+    background-color: color-mix(in oklab, var(--accent) 10%, transparent);
+    box-shadow:
+      0 0 0 0 transparent,
+      0 0 20px 4px color-mix(in oklab, var(--accent) 30%, transparent);
+  }
+
+  /* ── hover: button ── */
+  body.cc-btn #cc-dot  { width: 0; height: 0; box-shadow: none; }
+  body.cc-btn #cc-ring {
+    width: 76px; height: 76px;
+    border-color: var(--accent);
+    border-width: 2px;
+    background-color: color-mix(in oklab, var(--accent) 13%, transparent);
+    box-shadow:
+      0 0 0 0 transparent,
+      0 0 28px 6px color-mix(in oklab, var(--accent) 35%, transparent);
+  }
+  body.cc-btn #cc-text { opacity: 1; }
+
+  /* ── hover: card ── */
+  body.cc-card #cc-dot  { width: 0; height: 0; box-shadow: none; }
+  body.cc-card #cc-ring {
+    width: 62px; height: 62px;
+    border-color: var(--accent);
+    background-color: color-mix(in oklab, var(--accent) 10%, transparent);
+    box-shadow:
+      0 0 0 0 transparent,
+      0 0 22px 4px color-mix(in oklab, var(--accent) 28%, transparent);
+  }
+  body.cc-card #cc-text { opacity: 1; }
+
+  /* ── mousedown ripple ── */
+  body.cc-down #cc-ring {
+    box-shadow:
+      0 0 0 8px color-mix(in oklab, var(--accent) 14%, transparent),
+      0 0 16px 2px color-mix(in oklab, var(--accent) 30%, transparent);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #cc-dot, #cc-ring { display: none !important; }
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    if (!matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    var dot  = document.getElementById("cc-dot");
+    var ring = document.getElementById("cc-ring");
+    var txt  = document.getElementById("cc-text");
+    if (!dot || !ring || !txt) return;
+
+    var tx = -200, ty = -200, rx = tx, ry = ty, shown = false;
+
+    /* RAF loop: dot follows instantly, ring lags */
+    (function loop() {
+      dot.style.transform  = "translate(calc(-50% + " + tx + "px),calc(-50% + " + ty + "px))";
+      rx += (tx - rx) * 0.1;
+      ry += (ty - ry) * 0.1;
+      ring.style.transform = "translate(calc(-50% + " + rx + "px),calc(-50% + " + ry + "px))";
+      requestAnimationFrame(loop);
+    })();
+
+    window.addEventListener("mousemove", function (e) {
+      tx = e.clientX; ty = e.clientY;
+      if (!shown) {
+        shown = true; rx = tx; ry = ty;
+        dot.style.opacity = ring.style.opacity = "1";
+      }
+    }, { passive: true });
+
+    window.addEventListener("mouseleave", function () {
+      dot.style.opacity = ring.style.opacity = "0";
+    });
+    window.addEventListener("mouseenter", function () {
+      if (shown) dot.style.opacity = ring.style.opacity = "1";
+    });
+
+    var STATES = ["cc-link", "cc-btn", "cc-card"];
+
+    function clearState() {
+      document.body.classList.remove.apply(document.body.classList, STATES);
+      txt.textContent = "";
+    }
+
+    var SEL = "a, button, [data-cursor], .btn-primary, .btn-ghost, .card, .skill-card-inner";
+
+    document.addEventListener("mouseover", function (e) {
+      clearState();
+      var t = e.target && e.target.closest(SEL);
+      if (!t) return;
+
+      var k = t.dataset.cursor
+        || (t.matches(".btn-primary, .btn-ghost") ? "btn"
+          : t.matches(".card, .skill-card-inner") ? "card"
+          : t.matches("button") && !t.closest("header") ? "btn"
+          : "link");
+
+      document.body.classList.add("cc-" + k);
+      if (k === "btn")  txt.textContent = "Open";
+      if (k === "card") txt.textContent = "View →";
+    });
+
+    document.addEventListener("mouseout", function (e) {
+      if (!e.relatedTarget || !e.relatedTarget.closest(SEL)) clearState();
+    });
+
+    document.addEventListener("mousedown", function () { document.body.classList.add("cc-down"); });
+    document.addEventListener("mouseup",   function () { document.body.classList.remove("cc-down"); });
+  })();
+</script>

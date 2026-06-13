@@ -7,34 +7,41 @@ const skills = (await getCollection("skills")).sort((a, b) => a.data.order - b.d
 
 <SectionLabel index="04" label="Toolkit / the stack I reach for" anchor="skills" />
 
-<section class="relative">
-  <div class="container-x grid gap-6 md:gap-8 md:grid-cols-12">
-    <div class="md:col-span-4 in-view">
-      <h3 class="font-display text-[clamp(2rem,4vw,3rem)] leading-[1.05]" style="color: var(--fg);">
-        A carefully curated
-        <span class="display-italic" style="color: var(--accent);"> toolbelt</span> &mdash; not a dump of every logo on the internet.
-      </h3>
-      <p class="mt-5 max-w-[38ch]" style="color: var(--fg-soft);">
-        I prefer to go deep on a few tools rather than shallow on many. These are the ones I&rsquo;ve actually shipped with.
-      </p>
+<section class="relative pb-8">
+  <div class="container-x">
+
+    <div class="grid md:grid-cols-12 gap-6 mb-12 md:mb-16">
+      <div class="md:col-span-5 in-view">
+        <h3 class="font-display text-[clamp(2rem,4vw,3rem)] leading-[1.05]" style="color: var(--fg);">
+          A carefully curated
+          <span class="display-italic" style="color: var(--accent);"> toolbelt</span> &mdash; not a dump of every logo on the internet.
+        </h3>
+        <p class="mt-5 max-w-[38ch]" style="color: var(--fg-soft);">
+          I prefer to go deep on a few tools rather than shallow on many. These are the ones I&rsquo;ve actually shipped with.
+        </p>
+      </div>
     </div>
 
-    <div class="md:col-span-8 in-view">
-      <ul class="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x" style="border-color: var(--line);">
-        {skills.map((group) => (
-          <li class="py-6 sm:py-0 sm:px-6 first:sm:pl-0 last:sm:pr-0" style="border-color: var(--line);">
-            <p class="eyebrow">{group.data.category}</p>
-            <ul class="mt-4 space-y-2">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+      {skills.map((group, i) => (
+        <div
+          class="skill-card in-view"
+          style={`transition-delay: ${i * 0.06}s;`}
+        >
+          <div class="skill-card-inner">
+            <div class="flex items-baseline justify-between mb-5">
+              <span class="eyebrow">{group.data.category}</span>
+              <span class="skill-index">{String(i + 1).padStart(2, "0")}</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
               {group.data.items.map((item) => (
-                <li class="flex items-center gap-3 font-display text-lg" style="color: var(--fg);">
-                  <span class="h-1 w-3 shrink-0" style="background: var(--accent);"></span>
-                  {item}
-                </li>
+                <span class="skill-pill">{item}</span>
               ))}
-            </ul>
-          </li>
-        ))}
-      </ul>
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
+
   </div>
 </section>
